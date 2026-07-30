@@ -29,8 +29,6 @@ json.dumps(json_body) as a method converts it from a python dict then to a json 
 .encode() converts a string to bytes, then concatenated with the header
 Sleep 100 ms between sends
 
-
-TO TEST: remove sleep to stress test method
 """
 def send_packet(header, json_body):
     try:
@@ -120,11 +118,6 @@ If the regex receives unexpected input it may:
       - Panic on type mismatch
       - Enter catastrophic backtracking (regex DoS)
 
-To test
-try unicode characters, emoji, negative numbers embedded in string:
-      "SF-1BW-125"
-      "SF12BW125; DROP TABLE gateways;"   — SQL injection style
-      "\xFF\xFE" * 100                    — invalid UTF-8 bytes
 """
 def fuzz_2_datr_field():
     print("\n[FUZZ] Test 2: datr field (regex parsing)")
@@ -202,8 +195,6 @@ Test: bytes[0xFF...] (invalid packet version should be 0x02)
 bytes[...0xAA] (invalid packet type)
 packets with 4 bytes, 1 bytes, long zero bytes
 
-Test: EUI types, completely empty, PULL_DATA type with rxpk body, 
-PUSH_DATA type with PULL type, etc
 """
 def fuzz_4_binary_header():
     print("\n [FUZZ] Test 4: Binary Header corruption")
@@ -234,12 +225,6 @@ def fuzz_5_gateway_flood(count=500):
  
     count=500 means we send 500 packets with 500 different gateway identities.
  
-    Test:
-      - Increase count to 10000 or 100000 to stress test harder
-      - Add a valid LoRaWAN frame in the body to see if flooded gateways
-        can successfully deliver frames
-      - Measure memory usage of Docker container during flood:
-          docker stats chirpstack-chirpstack-gateway-bridge-1
     """
     print(f"\n[FUZZ] Test 5: Gateway EUI flood ({count} random EUIs)")
 
