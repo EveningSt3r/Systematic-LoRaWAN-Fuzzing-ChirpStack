@@ -1,44 +1,41 @@
-import socket
 import json
 import base64
 import os
-import struct
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 import time
 import urllib.request
 import urllib.error
 import re
 
-LOG_TS_RE = re.compile(r"^(\S+)")
-
-used_nonces = []
-
-API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzI" \
-"joiY2hpcnBzdGFjayIsInN1YiI6IjBlZDhmZGJhLWM5NjktNGJiNi05YzlhLTIxM2U5NjczOTZlMiIsInR5cCI6ImtleSJ9.atuc08Li9FuAMvuil80H8mWCI_99HesBXg0FnfGGEH0"
 
 from FuzzTest1SemTechUDP import (
     send_packet,
     send_raw,
-    valid_header,
-    TARGET,
-    sock,
-    APP_KEY,
-    DEV_EUI,
-    JOIN_EUI,
-    DEV_ADDR,
-    GW_EUI,
+    valid_header
 )
 
 from statefulFuzzer import (
     run_docker_cmd,
     get_redis_stream_length,
     poll_redis_for_new_entry,
-    get_recent_bridge_logs,
-    check_logs_for_errors,
     compute_join_request_mic,
     delete_device_session,
     get_device_state,
     POSTGRES_CONTAINER,
+    DEV_EUI,
+    JOIN_EUI,
+    GW_EUI,
+)
+
+
+LOG_TS_RE = re.compile(r"^(\S+)")
+
+used_nonces = []
+violations = []
+
+API_KEY = (
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzI"
+    "joiY2hpcnBzdGFjayIsInN1YiI6IjBlZDhmZGJhLWM5NjktNGJiNi05YzlhLTIxM2U5NjczOTZlMiIsInR5cCI6ImtleSJ9.atuc08Li9FuAMvuil80H8mWCI_99HesBXg0FnfGGEH0"
 )
 
 FSM = {
@@ -408,52 +405,52 @@ GLOBAL_INVALIDS = {
         "description": "Valid Semtech UDP header, broken JSON body",
         "raw_body": b'{"rxpk": }',
         "expected_cs_response": "reject",
-        "expected_error": None  # caught by Gateway Bridge, never reaches ChirpStack
+        "expected_error": None,  # caught by Gateway Bridge, never reaches ChirpStack
     },
     "empty_body": {
         "description": "Valid Semtech UDP header, empty body",
-        "raw_body": b'',
+        "raw_body": b"",
         "expected_cs_response": "reject",
-        "expected_error": None
+        "expected_error": None,
     },
     "null_body": {
         "description": "Valid Semtech UDP header, null JSON body",
-        "raw_body": b'null',
+        "raw_body": b"null",
         "expected_cs_response": "reject",
-        "expected_error": None
+        "expected_error": None,
     },
     "unknown_packet_type": {
         "description": "Invalid Semtech UDP packet type byte 0xAA",
         "raw_body": None,  # None means header itself is malformed
         "header_override": bytes([0x02, 0x00, 0x01, 0xAA]) + bytes.fromhex(GW_EUI),
         "expected_cs_response": "reject",
-        "expected_error": None
+        "expected_error": None,
     },
     "truncated_header": {
         "description": "Semtech UDP header truncated to 4 bytes, no gateway EUI",
         "raw_body": None,
         "header_override": bytes([0x02, 0x00, 0x01, 0x00]),
         "expected_cs_response": "reject",
-        "expected_error": None
+        "expected_error": None,
     },
     "invalid_version": {
         "description": "Semtech UDP protocol version byte set to 0xFF",
         "raw_body": None,
         "header_override": bytes([0xFF, 0x00, 0x01, 0x00]) + bytes.fromhex(GW_EUI),
         "expected_cs_response": "reject",
-        "expected_error": None
+        "expected_error": None,
     },
     "wrong_devaddr": {
         "description": "Valid Semtech UDP, DataUp with unregistered DevAddr",
         "raw_body": None,  # built by run_global_invalids
         "expected_cs_response": "reject",
-        "expected_error": "No device-session exists for dev_addr"
+        "expected_error": "No device-session exists for dev_addr",
     },
     "oversized_semtech": {
         "description": "Semtech UDP JSON body 100000 bytes",
-        "raw_body": b'{"rxpk": [{"data": "' + b'A' * 100000 + b'"}]}',
+        "raw_body": b'{"rxpk": [{"data": "' + b"A" * 100000 + b'"}]}',
         "expected_cs_response": "reject",
-        "expected_error": None
+        "expected_error": None,
     },
 }
 
@@ -512,14 +509,7 @@ def get_field_definitions(message_type: str, context: dict):  # return list
                 "value": bytes.fromhex(context["current_devaddr"].replace("\\x", "")),
                 "size": 4,
             },
-
-            {
-                "name": "fctrl", 
-                "type": "fctrl", 
-                "value": bytes([0x00]), 
-                "size": 1
-            },
-            
+            {"name": "fctrl", "type": "fctrl", "value": bytes([0x00]), "size": 1},
             {
                 "name": "fcnt",
                 "type": "fcnt",
@@ -664,7 +654,7 @@ def mutate_field(field: dict, context: dict):  # return list
 
     elif ftype == "payload":
         mutations.append(("payload_normal", bytes.fromhex("aabbccddeeff")))
-        mutations.append(("payload_empty", bytes))
+        mutations.append(("payload_empty", b""))
         mutations.append(("payload_one_byte", bytes([0x00])))
         mutations.append(("payload_max", os.urandom(51)))  # SF12 limit
         mutations.append(("payload_over_max", os.urandom(100)))  # over limit
@@ -770,9 +760,8 @@ def get_device_state_parsed() -> dict:
     return {
         "current_devaddr": parts[0].strip().replace("\\x", ""),
         "current_fcnt": int(parts[1].strip()),
-        "last_seen_at": parts[2].strip(),
-        "skip_fcnt_check": parts[3].strip() == "t",
-        "session_exists": parts[4].strip() == "true",
+        "skip_fcnt_check": parts[2].strip() == "t",
+        "session_exists": parts[3].strip() == "true",
     }
 
 
@@ -831,9 +820,9 @@ def check_oracle(transition: dict, context_before: dict, timestamp) -> dict:
 
     # poll for postgres entry
     postgres_changed = (
-    context_after["session_exists"] != context_before["session_exists"] or
-    context_after["current_devaddr"] != context_before["current_devaddr"]
-    )   
+        context_after["session_exists"] != context_before["session_exists"]
+        or context_after["current_devaddr"] != context_before["current_devaddr"]
+    )
     expected_next = transition.get("next_state")
     # s0 no session s1 session just created s2 session exists s3 session exists
     if expected_next == "S0":
@@ -843,13 +832,12 @@ def check_oracle(transition: dict, context_before: dict, timestamp) -> dict:
     else:
         fsm_match = True
 
-
     # poll for redis entry
-    redis_new_entry = poll_redis_for_new_entry("gw:stream:frame",
-    context_before["redis_gw_length"],
-    timeout=5)
+    redis_new_entry = poll_redis_for_new_entry(
+        "gw:stream:frame", context_before["redis_gw_length"], timeout=5
+    )
 
-
+    # document acceptances and rejects
     expected_response = transition.get("expected_cs_response")
     if redis_new_entry:
         actual_response = "accept"
@@ -870,7 +858,9 @@ def check_oracle(transition: dict, context_before: dict, timestamp) -> dict:
         violation_category = "unexpected_acceptance"
 
     elif expected_response == "accept" and transition.get("expected_downlink_error"):
-        downlink_error_found = any(transition["expected_downlink_error"] in line for line in log_lines)
+        downlink_error_found = any(
+            transition["expected_downlink_error"] in line for line in log_lines
+        )
 
         if downlink_error_found:
             oracle_violation = True
@@ -881,24 +871,23 @@ def check_oracle(transition: dict, context_before: dict, timestamp) -> dict:
         violation_category = "invalid_state_response"
 
     return {
-        "redis_oracle":        redis_new_entry,
-        "actual_response":     actual_response,
-        "expected_response":   expected_response,
-        "log_error_found":     log_error_found,
-        "expected_error":      expected_error,
-        "postgres_changed":    postgres_changed,
-        "fsm_match":           fsm_match,
-        "oracle_violation":    oracle_violation,
-        "violation_category":  violation_category,
-        "context_after":       context_after,
+        "redis_oracle": redis_new_entry,
+        "actual_response": actual_response,
+        "expected_response": expected_response,
+        "log_error_found": log_error_found,
+        "expected_error": expected_error,
+        "postgres_changed": postgres_changed,
+        "fsm_match": fsm_match,
+        "oracle_violation": oracle_violation,
+        "violation_category": violation_category,
+        "context_after": context_after,
     }
-    
+
 
 def get_recent_chirpstack_logs(lines=50) -> str:
-    stdout, _ = run_docker_cmd([
-        "docker", "logs", "--tail", str(lines),
-        "chirpstack-docker-chirpstack-1"
-    ])
+    stdout, _ = run_docker_cmd(
+        ["docker", "logs", "--tail", str(lines), "chirpstack-docker-chirpstack-1"]
+    )
     return stdout
 
 
@@ -908,33 +897,31 @@ def get_log_lines_after(timestamp: str) -> list[str]:
     Used by check_oracle to isolate logs from current test.
     """
 
-    cutoff = datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S.%f%z")
-    
+    cutoff = datetime.fromisoformat(timestamp)
+
     logs = get_recent_chirpstack_logs(20)
     # filtered dict
     filtered = []
     for line in logs.splitlines():
-        m = LOG_TS_RE.match(line) # match date regex to first word
+        m = LOG_TS_RE.match(line)  # match date regex to first word
         if not m:
             continue
 
         ts = m.group(1)
 
         if ts.endswith("Z"):
-            ts = ts[:-1] + "00:00" # add timestamp
+            ts = ts[:-1] + "00:00"  # add timestamp
 
-        if "." in ts: # filter nanosecond
+        if "." in ts:  # filter nanosecond
             head, rest = ts.split(".", 1)
             frac = rest[:6]
-            tz = rest[rest.find("+"):] if "+" in rest else ""
+            tz = rest[rest.find("+") :] if "+" in rest else ""
             ts = f"{head}.{frac}{tz}"
 
-        log_time = datetime.fromisoformat(ts) # reformat
-
+        log_time = datetime.fromisoformat(ts)  # reformat
 
         if log_time > cutoff:
             filtered.append(line)
-
 
     return filtered
 
@@ -948,46 +935,36 @@ def run_global_invalids(substate: str, context: dict):
     Checks oracle after each send.
     Prints result.
     """
-    body = {
-            "rxpk": [
-                {
-                    "data": None,
-                    "freq": 867.1,
-                    "datr": "SF12BW125",  # valid datr field
-                    "modu": "LORA",  # modulation type
-                    "codr": "4/5",  # coding rate
-                    "rssi": -60,  # signal strength
-                    "lsnr": 7,  # signal to noise ratio
-                    "size": 20,  # frame size in bytes
-                    "tmst": 1000,  # timestamp
-                    "chan": 0,  # channel number
-                    "rfch": 0,  # radio frequency chain
-                    "stat": 1,  # CRC status (1 = OK)
-                }
-            ]
-        }
+    # iterate for invalid class then name
     for invalid_name, invalid in GLOBAL_INVALIDS.items():
         timestamp = datetime.now(timezone.utc).isoformat()
-        if(invalid.get("header_override")):
+        # if header override send with that
+        # if raw body, send with valid header and raw body
+        if invalid.get("header_override"):
             valid_body = json.dumps({"rxpk": []}).encode()
             send_raw(invalid["header_override"], valid_body)
-        elif(invalid.get("raw_body") is not None):
+        elif invalid.get("raw_body") is not None:
             send_raw(valid_header(), invalid["raw_body"])
 
         time.sleep(1)
+        # transition proxy is the dict used to store oracle results
         transitionproxy = {
             "expected_cs_response": invalid["expected_cs_response"],
             "expected_error": invalid["expected_error"],
-            "next_state": None
+            "next_state": None,
         }
         oracle = check_oracle(transitionproxy, context, timestamp)
-        status = ("VIOLATION:" + oracle["violation_category"]
-                  if oracle["oracle_violation"] else "MATCH")
-        print(f"[{substate}][GLOBAL_INVALID][{invalid_name}] "
-              f"EXPECTED:{invalid['expected_cs_response']} "
-              f"ACTUAL:{oracle['actual_response']} {status}")
-
-
+        status = (
+            "VIOLATION:" + oracle["violation_category"]
+            if oracle["oracle_violation"]
+            else "MATCH"
+        )
+        # print frame literals
+        print(
+            f"[{substate}][GLOBAL_INVALID][{invalid_name}] "
+            f"EXPECTED:{invalid['expected_cs_response']} "
+            f"ACTUAL:{oracle['actual_response']} {status}"
+        )
 
 
 def run_transition(
@@ -997,37 +974,59 @@ def run_transition(
     Runs all field mutations for a single transition.
     For each mutation: builds frame, sends, checks oracle, prints.
     """
-    fields = get_field_definitions(transition_name, context)
-    mutations = mutate_field(fields)
-    for field in mutations:
+    fields = get_field_definitions(transition["trigger"], context)
+    # get field definitions for transition ("DataUp" not "DataUp_invalid")
+    for field in fields:
+        # for key-value pair in dict
         for mutation_name, mutated_value in mutate_field(field, context):
             timestamp = datetime.now(timezone.utc).isoformat()
-            frame = build_frame(transition["trigger"], field["name"], context)
+            # send frame with mutation
+            frame = build_frame(transition["trigger"], {field["name"], mutated_value}, context)
             encoded = base64.b64encode(frame).decode()
             body = wrap_in_semtech_udp_json(encoded, len(frame))
             send_packet(valid_header(), body)
             time.sleep(1)
             oracle = check_oracle(transition, context, timestamp)
-            status = ("VIOLATION:" + oracle["violation_category"] 
-                      if oracle["oracle_violation"] else "MATCH")
-            print(f"[{substate_name}][{transition_name}]"
-                  f"[{field['name']}:{mutation_name}] "
-                  f"EXPECTED:{oracle['expected_cs_response']} "
-                  f"ACTUAL:{oracle['actual_response']} {status}")
-
+            # document violation if necesasry
+            status = (
+                "VIOLATION:" + oracle["violation_category"]
+                if oracle["oracle_violation"]
+                else "MATCH"
+            )
+            print(
+                f"[{substate_name}][{transition_name}]"
+                f"[{field['name']}:{mutation_name}] "
+                f"EXPECTED:{oracle['expected_cs_response']} "
+                f"ACTUAL:{oracle['actual_response']} {status}"
+            )
+            # document violation in global dict for processing
+            if oracle["oracle_violation"]:
+                violations.append(
+                    {
+                        "state": substate_name,
+                        "transition": transition_name,
+                        "field": field["name"],
+                        "mutation": mutation_name,
+                        "category": oracle["violation_category"],
+                        "expected": oracle["expected_cs_response"],
+                        "actual": oracle["actual_response"],
+                    }
+                )
 
         # check oracle
         # print results
 
-    return 0 
-
-        
+    return 0
 
 
 def run_substate(state_name: str, substate_name: str, substate: dict, context: dict):
     """
     Runs all transitions and global invalids for a single substate.
     """
+    print(f"\n[RUN] {state_name}/{substate_name}")
+    run_global_invalids(substate_name, context)
+    for transition_name, transition in substate["transitions"].items():
+        run_transition(transition_name, transition, context, substate_name)
 
 
 def run_fsm():
@@ -1036,6 +1035,21 @@ def run_fsm():
     Calls navigate_to_substate then run_substate for each.
     Prints summary at end.
     """
+    context_dict = get_current_context()
+    for state_name, state in FSM["states"].items():
+        for substate_name, substate in state["substates"].items():
+            context_dict = navigate_to_substate(state_name, substate_name, context_dict)
+            run_substate(state_name, substate_name, substate, context_dict)
+
+    print("\n" + "=" * 60)
+    print(f"FSM FUZZING COMPLETE")
+    print(f"Total violations: {len(violations)}")
+    for v in violations:
+        print(
+            f"  [{v['state']}][{v['transition']}][{v['field']}:{v['mutation']}] "
+            f"{v['category'].upper()}"
+        )
+    print("=" * 60)
 
 
 def send_valid_join(context: dict) -> bytes:
@@ -1056,10 +1070,9 @@ def send_valid_join(context: dict) -> bytes:
 
 
 def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
-    print(f"\n[NAV] Navigating to {state}/{substate}")
     """
-    Navigates ChirpStack into the required substate.
-    Returns updated context after navigation.
+        Navigates ChirpStack into the required substate.
+        Returns updated context after navigation.
     """
     print(f"\n[NAV] Navigating to {state}/{substate}")
 
@@ -1067,14 +1080,11 @@ def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
         if substate == "S0a":
             delete_device_session()
             flush_device_nonces()
-            device_state = get_device_state()
-
             # delete session flush device then navigate
             context = get_current_context(context.get("used_nonces", []))
 
         elif substate == "S0b":
             delete_device_session()
-            device_state = get_device_state()
             context = get_current_context(context.get("used_nonces", []))
             # delete session then navigate
 
@@ -1082,10 +1092,9 @@ def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
         if substate == "S1a":
             delete_device_session()
             nonce = send_valid_join(context)
-            used_nonces.append(nonce)  # update global  
+            used_nonces.append(nonce)  # update global
             context["last_join_nonce"] = nonce
             time.sleep(2)
-            device_state = get_device_state()
             context = get_current_context(context.get("used_nonces", []))
 
     elif state == "S2":
@@ -1094,30 +1103,25 @@ def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
         used_nonces.append(nonce)  # update global
         context["last_join_nonce"] = nonce
         time.sleep(2)
-        device_state = get_device_state()
-        device_parsed = get_device_state_parsed()
         context = get_current_context(context.get("used_nonces", []))
-        # all S2 substates arrive the same way 
+        # all S2 substates arrive the same way
         # delete, joinreq, sleep 2
 
     elif state == "S3":
-        # navigate to s2
+        # navigate to s2, all s3 needs to be in s2 first
         delete_device_session()
         nonce = send_valid_join(context)
         used_nonces.append(nonce)  # update global
         context["last_join_nonce"] = nonce
         time.sleep(2)
-        device_state = get_device_state()
-        device_parsed = get_device_state_parsed()
         context = get_current_context(context.get("used_nonces", []))
 
-        # rejoin request zeroed mic sleep 2 
+        # rejoin request zeroed mic sleep 2
         frame = build_frame("RejoinRequest", {}, context)
         encoded = base64.b64encode(frame).decode()
         body = wrap_in_semtech_udp_json(encoded, len(frame))
         send_packet(valid_header(), body)
         time.sleep(2)
-        device_parsed = get_device_state_parsed()
         context = get_current_context(context.get("used_nonces", []))
         if not context["session_exists"]:
             print("[NAV ERROR] Session destroyed after RejoinRequest — unexpected")
@@ -1126,20 +1130,26 @@ def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
     return get_current_context(context.get("used_nonces", []))
 
 
-
 def flush_device_nonces():
     """
     Flushes all used DevNonces for the device via ChirpStack REST API.
     Only called before S0a to ensure completely fresh state.
     Endpoint: DELETE /api/devices/{dev_eui}/otaa-nonces
     """
-    
+
     url = f"http://localhost:8090/api/devices/{DEV_EUI.hex()}/otaa-nonces"
     req = urllib.request.Request(url, method="DELETE")
     req.add_header("Grpc-Metadata-Authorization", f"Bearer {API_KEY}")
-    
+
     try:
         urllib.request.urlopen(req)
         print("[NONCE] DevNonce history flushed")
     except urllib.error.HTTPError as e:
         print(f"[NONCE ERROR] {e.code}: {e.reason}")
+
+
+
+if __name__ == "__main__":
+    print(get_device_state_parsed())    
+    flush_device_nonces()
+    input("\n Press Enter to exit...")
