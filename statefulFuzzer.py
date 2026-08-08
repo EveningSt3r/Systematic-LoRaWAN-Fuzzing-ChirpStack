@@ -116,7 +116,7 @@ def poll_redis_for_new_entry(stream_key, previous_count, timeout):
     previous_count = the stream length before sending
     We check every 0.5 seconds until timeout.
     """
-    timeout = 5
+    timeout = 3
     import time
 
     elapsed = 0
@@ -277,7 +277,7 @@ def send_confirmedDataUp_1A():
     }
     send_packet(valid_header(), body)
     time.sleep(2)
-    poll_redis_for_new_entry("gw:stream:frame", redis_stream_length_snapshot, timeout=5)
+    poll_redis_for_new_entry("gw:stream:frame", redis_stream_length_snapshot, timeout=3)
 
     print(get_recent_bridge_logs())
     print(get_device_state())
@@ -319,7 +319,7 @@ def delete_session_dataUp_1B():
     }
     send_packet(valid_header(), body)
     time.sleep(2)
-    poll_redis_for_new_entry("gw:stream:frame", redis_stream_length_snapshot, timeout=5)
+    poll_redis_for_new_entry("gw:stream:frame", redis_stream_length_snapshot, timeout=3)
     print(get_recent_bridge_logs())
     print(get_device_state())
 
@@ -368,7 +368,7 @@ def valid_join_req_MIC_2():
     }
     send_packet(valid_header(), body)
     time.sleep(2)
-    poll_redis_for_new_entry("gw:stream:frame", redis_stream_length_snapshot, timeout=5)
+    poll_redis_for_new_entry("gw:stream:frame", redis_stream_length_snapshot, timeout=3)
     print(get_recent_bridge_logs())
     print(get_device_state())
     return 0
@@ -417,7 +417,7 @@ def replay_then_oversized_3():
     }
     send_packet(valid_header(), body)
     time.sleep(2)
-    poll_redis_for_new_entry("gw:stream:frame", redis_stream_length_snapshot, timeout=5)
+    poll_redis_for_new_entry("gw:stream:frame", redis_stream_length_snapshot, timeout=3)
     print(get_recent_bridge_logs())
     print(get_device_state())
     print("Replay attack - sending frame 10 times")
@@ -427,7 +427,7 @@ def replay_then_oversized_3():
         send_packet(valid_header(), body)
         time.sleep(2)
         poll_redis_for_new_entry(
-            "gw:stream:frame", redis_stream_length_snapshot, timeout=5
+            "gw:stream:frame", redis_stream_length_snapshot, timeout=3
         )
         print(f"[REPLAY] Iteration {x + 1}/10")
 
@@ -467,7 +467,7 @@ def replay_then_oversized_3():
     send_packet(valid_header(), body)
     time.sleep(2)
     poll_redis_for_new_entry(
-        "gw:stream:frame", redis_stream_length_snapshot_2, timeout=5
+        "gw:stream:frame", redis_stream_length_snapshot_2, timeout=3
     )
     print(get_recent_bridge_logs())
     print(get_device_state())
@@ -521,7 +521,7 @@ def rejoinframe_new_session_4():
     }
     send_packet(valid_header(), body)
     time.sleep(0.5)
-    poll_redis_for_new_entry("gw:stream:frame", redis_stream_length_snapshot, timeout=2)
+    poll_redis_for_new_entry("gw:stream:frame", redis_stream_length_snapshot, timeout=3)
     print(get_recent_bridge_logs())
     print(get_device_state())
 
@@ -560,7 +560,7 @@ def rejoinframe_new_session_4():
     send_packet(valid_header(), body)
     time.sleep(2)
     poll_redis_for_new_entry(
-        "gw:stream:frame", redis_stream_length_snapshot_2, timeout=5
+        "gw:stream:frame", redis_stream_length_snapshot_2, timeout=3
     )
     print(get_recent_bridge_logs())
     print(get_device_state())

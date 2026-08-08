@@ -8,6 +8,7 @@ import urllib.error
 import re
 
 
+
 from FuzzTest1SemTechUDP import (
     send_packet,
     send_raw,
@@ -28,6 +29,7 @@ from statefulFuzzer import (
 )
 
 
+ANSI_ESCAPE_RE = re.compile(r'\x1b\[[0-9;]*m')
 LOG_TS_RE = re.compile(r"^(\S+)")
 
 used_nonces = []
@@ -447,8 +449,8 @@ GLOBAL_INVALIDS = {
         "expected_error": "No device-session exists for dev_addr",
     },
     "oversized_semtech": {
-        "description": "Semtech UDP JSON body 100000 bytes",
-        "raw_body": b'{"rxpk": [{"data": "' + b"A" * 100000 + b'"}]}',
+        "description": "Semtech UDP JSON body 10000 bytes",
+        "raw_body": b'{"rxpk": [{"data": "' + b"A" * 10000 + b'"}]}',
         "expected_cs_response": "reject",
         "expected_error": None,
     },
@@ -702,12 +704,16 @@ def build_frame(message_type: str, field_overrides: dict, context: dict) -> byte
 
     # if mic_value is None it means compute a real MIC (JoinRequest only)
     # otherwise append whatever mic_value is (zeroed, all-ones, bit-flip)
+
     if mic_value is None and message_type == "JoinRequest":
         mhdr = field_values["mhdr"]
         dev_nonce = field_values["dev_nonce"]
         mic_value = compute_join_request_mic(mhdr, JOIN_EUI, DEV_EUI, dev_nonce)
         frame += mic_value
     else:
+        if mic_value is None:
+            mic_value = bytes(4)
+
         frame += mic_value
 
     return frame
@@ -834,30 +840,30 @@ def check_oracle(transition: dict, context_before: dict, timestamp) -> dict:
 
     # poll for redis entry
     redis_new_entry = poll_redis_for_new_entry(
-        "gw:stream:frame", context_before["redis_gw_length"], timeout=5
+        "gw:stream:frame", context_before["redis_gw_length"], timeout=3
     )
 
     # document acceptances and rejects
-    expected_response = transition.get("expected_cs_response")
+    expected_cs_response = transition.get("expected_cs_response")
     if redis_new_entry:
         actual_response = "accept"
     else:
         actual_response = "reject"
 
-    if expected_response == "accept_if_skip_fcnt_check":
-        expected_response = "accept" if context_before["skip_fcnt_check"] else "reject"
+    if expected_cs_response == "accept_if_skip_fcnt_check":
+        expected_cs_response = "accept" if context_before["skip_fcnt_check"] else "reject"
 
     oracle_violation = False
     violation_category = None
 
-    if expected_response == "accept" and actual_response == "reject":
+    if expected_cs_response == "accept" and actual_response == "reject":
         oracle_violation = True
         violation_category = "unexpected_rejection"
-    elif expected_response == "reject" and actual_response == "accept":
+    elif expected_cs_response == "reject" and actual_response == "accept":
         oracle_violation = True
         violation_category = "unexpected_acceptance"
 
-    elif expected_response == "accept" and transition.get("expected_downlink_error"):
+    elif expected_cs_response == "accept" and transition.get("expected_downlink_error"):
         downlink_error_found = any(
             transition["expected_downlink_error"] in line for line in log_lines
         )
@@ -873,7 +879,7 @@ def check_oracle(transition: dict, context_before: dict, timestamp) -> dict:
     return {
         "redis_oracle": redis_new_entry,
         "actual_response": actual_response,
-        "expected_response": expected_response,
+        "expected_cs_response": expected_cs_response,
         "log_error_found": log_error_found,
         "expected_error": expected_error,
         "postgres_changed": postgres_changed,
@@ -903,7 +909,8 @@ def get_log_lines_after(timestamp: str) -> list[str]:
     # filtered dict
     filtered = []
     for line in logs.splitlines():
-        m = LOG_TS_RE.match(line)  # match date regex to first word
+        clean_line = ANSI_ESCAPE_RE.sub("", line)
+        m = LOG_TS_RE.match(clean_line)  # match date regex to first word
         if not m:
             continue
 
@@ -918,10 +925,18 @@ def get_log_lines_after(timestamp: str) -> list[str]:
             tz = rest[rest.find("+") :] if "+" in rest else ""
             ts = f"{head}.{frac}{tz}"
 
-        log_time = datetime.fromisoformat(ts)  # reformat
+        try:
+            log_time = datetime.fromisoformat(ts)
+        except ValueError:
+            continue  # skip lines that still don't parse
+
+        if log_time.tzinfo is None:
+            log_time = log_time.replace(tzinfo=timezone.utc)
+        if cutoff.tzinfo is None:
+            cutoff = cutoff.replace(tzinfo=timezone.utc)
 
         if log_time > cutoff:
-            filtered.append(line)
+            filtered.append(clean_line)  # append clean line not original
 
     return filtered
 
@@ -935,6 +950,15 @@ def run_global_invalids(substate: str, context: dict):
     Checks oracle after each send.
     Prints result.
     """
+
+    wrong_devaddr_frame = bytearray(19)
+    wrong_devaddr_frame[0] = 0x80
+    wrong_devaddr_frame[1:5] = bytes([0x00, 0x00, 0x00, 0x00])  # unregistered DevAddr
+    wrong_devaddr_frame[5] = 0x00
+    wrong_devaddr_frame[6:8] = bytes([0x00, 0x00])
+    wrong_devaddr_frame[8] = 0x01
+    wrong_devaddr_frame[9:15] = bytes.fromhex("aabbccddeeff")
+    wrong_devaddr_frame[15:19] = bytes([0x00, 0x00, 0x00, 0x00])
     # iterate for invalid class then name
     for invalid_name, invalid in GLOBAL_INVALIDS.items():
         timestamp = datetime.now(timezone.utc).isoformat()
@@ -946,7 +970,11 @@ def run_global_invalids(substate: str, context: dict):
         elif invalid.get("raw_body") is not None:
             send_raw(valid_header(), invalid["raw_body"])
 
-        time.sleep(1)
+        if invalid_name == "wrong_devaddr":
+            body = wrap_in_semtech_udp_json(bytes(wrong_devaddr_frame), len(wrong_devaddr_frame))
+            send_packet(valid_header(), body)
+
+        time.sleep(0.5)
         # transition proxy is the dict used to store oracle results
         transitionproxy = {
             "expected_cs_response": invalid["expected_cs_response"],
@@ -981,11 +1009,10 @@ def run_transition(
         for mutation_name, mutated_value in mutate_field(field, context):
             timestamp = datetime.now(timezone.utc).isoformat()
             # send frame with mutation
-            frame = build_frame(transition["trigger"], {field["name"], mutated_value}, context)
-            encoded = base64.b64encode(frame).decode()
-            body = wrap_in_semtech_udp_json(encoded, len(frame))
+            frame = build_frame(transition["trigger"], {field["name"]: mutated_value}, context)
+            body = wrap_in_semtech_udp_json(frame, len(frame))
             send_packet(valid_header(), body)
-            time.sleep(1)
+            time.sleep(0.5)
             oracle = check_oracle(transition, context, timestamp)
             # document violation if necesasry
             status = (
@@ -1063,8 +1090,7 @@ def send_valid_join(context: dict) -> bytes:
     dev_nonce = os.urandom(2)
     mic = compute_join_request_mic(mhdr, JOIN_EUI, DEV_EUI, dev_nonce)
     frame = mhdr + join_eui_le + dev_eui_le + dev_nonce + mic
-    encoded = base64.b64encode(frame).decode()
-    body = wrap_in_semtech_udp_json(encoded, len(frame))
+    body = wrap_in_semtech_udp_json(frame, len(frame))
     send_packet(valid_header(), body)
     return dev_nonce
 
@@ -1096,30 +1122,40 @@ def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
             context["last_join_nonce"] = nonce
             time.sleep(2)
             context = get_current_context(context.get("used_nonces", []))
+            if not context["session_exists"]:
+                print("[NAV ERROR] Failed to reach S1a — join not accepted")
+                return context
 
     elif state == "S2":
         delete_device_session()
+        flush_device_nonces()
         nonce = send_valid_join(context)
         used_nonces.append(nonce)  # update global
         context["last_join_nonce"] = nonce
         time.sleep(2)
         context = get_current_context(context.get("used_nonces", []))
+        if not context["session_exists"]:
+                        print("[NAV ERROR] Failed to reach S2 — join not accepted")
+                        return context
         # all S2 substates arrive the same way
         # delete, joinreq, sleep 2
 
     elif state == "S3":
         # navigate to s2, all s3 needs to be in s2 first
         delete_device_session()
+        flush_device_nonces()
         nonce = send_valid_join(context)
         used_nonces.append(nonce)  # update global
         context["last_join_nonce"] = nonce
         time.sleep(2)
         context = get_current_context(context.get("used_nonces", []))
+        if not context["session_exists"]:
+                        print("[NAV ERROR] Failed to reach S3 — join not accepted")
+                        return context
 
         # rejoin request zeroed mic sleep 2
         frame = build_frame("RejoinRequest", {}, context)
-        encoded = base64.b64encode(frame).decode()
-        body = wrap_in_semtech_udp_json(encoded, len(frame))
+        body = wrap_in_semtech_udp_json(frame, len(frame))
         send_packet(valid_header(), body)
         time.sleep(2)
         context = get_current_context(context.get("used_nonces", []))
@@ -1132,24 +1168,56 @@ def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
 
 def flush_device_nonces():
     """
-    Flushes all used DevNonces for the device via ChirpStack REST API.
-    Only called before S0a to ensure completely fresh state.
-    Endpoint: DELETE /api/devices/{dev_eui}/otaa-nonces
+    Flushes DevNonce history directly via PostgreSQL.
+    Fallback if REST API endpoint is unavailable.
     """
-
-    url = f"http://localhost:8090/api/devices/{DEV_EUI.hex()}/otaa-nonces"
-    req = urllib.request.Request(url, method="DELETE")
-    req.add_header("Grpc-Metadata-Authorization", f"Bearer {API_KEY}")
-
-    try:
-        urllib.request.urlopen(req)
-        print("[NONCE] DevNonce history flushed")
-    except urllib.error.HTTPError as e:
-        print(f"[NONCE ERROR] {e.code}: {e.reason}")
+    stdout, stderr = run_docker_cmd([
+        "docker", "exec", POSTGRES_CONTAINER,
+        "psql", "-U", "chirpstack", "-c",
+        f"DELETE FROM device_keys WHERE dev_eui = '\\x{DEV_EUI.hex()}';"
+    ])
+    if "DELETE" in stdout:
+        print("[NONCE] DevNonce history flushed via SQL")
+    else:
+        print(f"[NONCE ERROR] {stderr}")
 
 
 
 if __name__ == "__main__":
-    print(get_device_state_parsed())    
-    flush_device_nonces()
-    input("\n Press Enter to exit...")
+
+    try:
+        context = get_current_context()
+        for state_name in ["S2", "S3"]:
+            for substate_name, substate in FSM["states"][state_name]["substates"].items():
+                context = navigate_to_substate(state_name, substate_name, context)
+                run_substate(state_name, substate_name, substate, context)
+        print(f"\nTotal violations: {len(violations)}")
+        for v in violations:
+            print(f"  [{v['state']}][{v['transition']}][{v['field']}:{v['mutation']}] "
+                  f"{v['category'].upper()}")
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        print(f"\nViolations before crash: {len(violations)}")
+        for v in violations:
+            print(f"  [{v['state']}][{v['transition']}][{v['field']}:{v['mutation']}] "
+                  f"{v['category'].upper()}")
+        input("\nPress Enter to exit...")
+
+    # powercfg /change standby-timeout-ac 0
+    # python -u statefuzzingalgo.py > fuzzing_results.txt 2>&1
+    # powershell Get-Content fuzzing_results.txt -Wait
+
+
+    # try:
+    #     run_fsm()
+    # except Exception as e:
+    #     import traceback
+    #     print(f"\n[CRASH] {e}")
+    #     traceback.print_exc()
+    #     print(f"\nViolations found before crash: {len(violations)}")
+    #     for v in violations:
+    #         print(f"  [{v['state']}][{v['transition']}][{v['field']}:{v['mutation']}] "
+    #               f"{v['category'].upper()}")
+
+    # input("\n Press Enter to exit...")

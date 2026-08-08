@@ -1,0 +1,19 @@
+{
+	"0": {
+		"id": 0,
+		"info": {
+			"macAddress": "2e6496d3493d6632",
+			"keepAlive": 30,
+			"active": true,
+			"typeGateway": false,
+			"name": "syou029",
+			"location": {
+				"latitude": 0,
+				"longitude": 0,
+				"altitude": 0
+			},
+			"ip": "",
+			"port": ""
+		}
+	}
+}
