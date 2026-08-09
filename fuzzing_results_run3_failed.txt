@@ -1,0 +1,2054 @@
+
+[NAV] Navigating to S2/S2a
+
+[DB] Deleting device session...
+[DB] UPDATE 1
+[NONCE] DevNonce history flushed via SQL
+[SENT] b'\x02\x82\xfd\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAAAAAAApVW3hfKcOHBrf+hJsqY=", "freq": 867.1'...
+[NAV ERROR] Failed to reach S2 — join not accepted
+
+[RUN] S2/S2a
+[SENT RAW] header + b'{"rxpk": }'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][GLOBAL_INVALID][malformed_json] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b''
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][GLOBAL_INVALID][empty_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'null'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][GLOBAL_INVALID][null_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][GLOBAL_INVALID][unknown_packet_type] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][GLOBAL_INVALID][truncated_header] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][GLOBAL_INVALID][invalid_version] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02x\xfe\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][GLOBAL_INVALID][wrong_devaddr] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": [{"data": "AAAAAAAAAAAAAAAAAAAA'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][GLOBAL_INVALID][oversized_semtech] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02a\x88\x00.d\x96\xd3I=f2{"rxpk": [{"data": "QAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mhdr:mhdr_mtype_0x40] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x029p\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mhdr:mhdr_mtype_0x80] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\n\xf2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mhdr:mhdr_mtype_0x00] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x01\x8a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "IAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mhdr:mhdr_mtype_0x20] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xd7|\x00.d\x96\xd3I=f2{"rxpk": [{"data": "YAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mhdr:mhdr_mtype_0x60] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xcc2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "oAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mhdr:mhdr_mtype_0xa0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x19\x01\x00.d\x96\xd3I=f2{"rxpk": [{"data": "wAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mhdr:mhdr_mtype_0xc0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02bt\x00.d\x96\xd3I=f2{"rxpk": [{"data": "4AAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mhdr:mhdr_mtype_0xe0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xff\x1f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "/wAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mhdr:mhdr_mtype_0xff] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc4g\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][devaddr:devaddr_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x19\xec\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][devaddr:devaddr_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02{\xf3\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP////8AAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][devaddr:devaddr_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02N\xa2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIAKBDUAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][devaddr:devaddr_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x13\xa9\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][devaddr:devaddr_not_reversed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc8;\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAEAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fctrl:fctrl_bit0_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc7\xed\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAIAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fctrl:fctrl_bit1_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xce>\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAQAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fctrl:fctrl_bit2_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xebP\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAgAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fctrl:fctrl_bit3_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02b\x04\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gBAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fctrl:fctrl_bit4_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xb2\xaa\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fctrl:fctrl_bit5_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02~\x0b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gEAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fctrl:fctrl_bit6_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc8y\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fctrl:fctrl_bit7_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xa9W\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fctrl:fctrl_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xe2\x12\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP8AAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fctrl:fctrl_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x93\xb8\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fcnt:fcnt_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02U\xa3\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fcnt:fcnt_current_minus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xba\x90\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fcnt:fcnt_current] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02z\xcf\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAABAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fcnt:fcnt_current_plus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xde\xf2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAD//wGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fcnt:fcnt_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x995\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAoiQGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fcnt:fcnt_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x16\xa7\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAACqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fport:fport_0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02!\xc4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fport:fport_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xf6K\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAOCqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fport:fport_224] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc71\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAP+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fport:fport_255] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x020\xa6\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAN+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][fport:fport_max_app] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02V<\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][payload:payload_normal] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02>\x16\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAA", "freq": 867.1, "datr": "SF12BW125'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][payload:payload_empty] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x9f1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAAAA==", "freq": 867.1, "datr": "SF12B'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][payload:payload_one_byte] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xfal\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFJK9dmnu5WeupvqPievYVlqgfeUCHPBywIxYZn1FFU'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][payload:payload_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02H`\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGKxAP3mPH731fsNyPuzMcXLumisBzKzDjsXjzXapuk'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][payload:payload_over_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\t\x10\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAHYhfpVKn4AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][payload:payload_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x022+\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mic:mic_zeroed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x95F\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//////", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mic:mic_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xaer\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//AP8A", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mic:mic_bit_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02d\x85\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_valid][mic:mic_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xbb\xca\x00.d\x96\xd3I=f2{"rxpk": [{"data": "QAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0x40] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x7fX\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0x80] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02.&\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0x00] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x024\x03\x00.d\x96\xd3I=f2{"rxpk": [{"data": "IAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0x20] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x1c\xf4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "YAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0x60] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xa6Y\x00.d\x96\xd3I=f2{"rxpk": [{"data": "oAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0xa0] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x174\x00.d\x96\xd3I=f2{"rxpk": [{"data": "wAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0xc0] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xa5\xe3\x00.d\x96\xd3I=f2{"rxpk": [{"data": "4AAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0xe0] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xfe\x12\x00.d\x96\xd3I=f2{"rxpk": [{"data": "/wAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0xff] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xc2[\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][devaddr:devaddr_valid] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x1e\xfa\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][devaddr:devaddr_zero] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02J\xf2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP////8AAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][devaddr:devaddr_all_ones] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xe9L\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gPZQmEUAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][devaddr:devaddr_random] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xa5\xdf\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][devaddr:devaddr_not_reversed] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x0b\x1d\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAEAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fctrl:fctrl_bit0_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xde\xa0\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAIAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fctrl:fctrl_bit1_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02/e\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAQAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fctrl:fctrl_bit2_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xd2+\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAgAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fctrl:fctrl_bit3_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x8d#\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gBAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fctrl:fctrl_bit4_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02TA\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fctrl:fctrl_bit5_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02]T\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gEAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fctrl:fctrl_bit6_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xf0n\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fctrl:fctrl_bit7_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02`\xea\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fctrl:fctrl_zero] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xd2@\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP8AAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fctrl:fctrl_all_ones] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x13\x9b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fcnt:fcnt_zero] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x9d\xfe\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fcnt:fcnt_current_minus_1] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xde.\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fcnt:fcnt_current] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02U\xb6\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAABAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fcnt:fcnt_current_plus_1] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xa0\x04\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAD//wGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fcnt:fcnt_max] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x93\xcb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAE6QGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fcnt:fcnt_random] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xbb\xdf\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAACqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fport:fport_0] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02X\x8f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fport:fport_1] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xf92\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAOCqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fport:fport_224] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xa4x\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAP+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fport:fport_255] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02z\x94\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAN+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][fport:fport_max_app] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x0c\x02\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][payload:payload_normal] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x93\x9f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAA", "freq": 867.1, "datr": "SF12BW125'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][payload:payload_empty] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xe3\x1e\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAAAA==", "freq": 867.1, "datr": "SF12B'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][payload:payload_one_byte] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xf5\xe8\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGPM+esn2g02N1On2pV9+OCeUjhuJTeRKWyeTzi+r5Y'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][payload:payload_max] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xd5G\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAE0MHfiRsErBWqLiGozk2LJ7guQM1EXAshryqkrzxE0'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][payload:payload_over_max] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02k-\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAE2UrFtFSYAAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][payload:payload_random] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xf4\x9e\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mic:mic_zeroed] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x08B\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//////", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mic:mic_all_ones] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02D\x82\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//AP8A", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mic:mic_bit_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xbe\xb3\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_invalid_mic][mic:mic_valid] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xfe\x91\x00.d\x96\xd3I=f2{"rxpk": [{"data": "QAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0x40] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xd1W\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0x80] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02}\xad\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0x00] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02b\xba\x00.d\x96\xd3I=f2{"rxpk": [{"data": "IAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0x20] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x12\xb1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "YAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0x60] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xb7(\x00.d\x96\xd3I=f2{"rxpk": [{"data": "oAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0xa0] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xe6\x89\x00.d\x96\xd3I=f2{"rxpk": [{"data": "wAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0xc0] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02w\x93\x00.d\x96\xd3I=f2{"rxpk": [{"data": "4AAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0xe0] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x022\xbd\x00.d\x96\xd3I=f2{"rxpk": [{"data": "/wAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0xff] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xf7\t\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][devaddr:devaddr_valid] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xcb\xa1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][devaddr:devaddr_zero] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xaa\xaf\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP////8AAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][devaddr:devaddr_all_ones] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02/p\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCeRCxMAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][devaddr:devaddr_random] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x0b\xdd\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][devaddr:devaddr_not_reversed] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xd9\xb8\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAEAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fctrl:fctrl_bit0_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x1c\xb6\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAIAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fctrl:fctrl_bit1_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x88\xbb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAQAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fctrl:fctrl_bit2_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02 \x80\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAgAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fctrl:fctrl_bit3_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x85\xd4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gBAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fctrl:fctrl_bit4_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xb2b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fctrl:fctrl_bit5_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x12\r\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gEAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fctrl:fctrl_bit6_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x82f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fctrl:fctrl_bit7_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xd4\xa4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fctrl:fctrl_zero] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x8b\x92\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP8AAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fctrl:fctrl_all_ones] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x1f>\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fcnt:fcnt_zero] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xb3\xcf\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fcnt:fcnt_current_minus_1] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02&\xda\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fcnt:fcnt_current] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02E\x89\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAABAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fcnt:fcnt_current_plus_1] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02k\xfb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAD//wGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fcnt:fcnt_max] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x15\x1d\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gADYJgGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fcnt:fcnt_random] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x03\x19\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAACqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fport:fport_0] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02>M\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fport:fport_1] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xe9\xc2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAOCqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fport:fport_224] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02`\x03\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAP+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fport:fport_255] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xdb9\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAN+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][fport:fport_max_app] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xeeg\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][payload:payload_normal] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x1d;\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAA", "freq": 867.1, "datr": "SF12BW125'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][payload:payload_empty] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02uI\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAAAA==", "freq": 867.1, "datr": "SF12B'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][payload:payload_one_byte] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x16L\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFxM6eP/r/QqnZuElMgXaefVoifrIfwwiYmmSltafbX'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][payload:payload_max] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x87\x15\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGj6R08ytz7Oh/ay0ln3ShuuTr3hQjO2Hadl5QQ1CWm'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][payload:payload_over_max] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02q\xb1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFnWr/MUH0AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][payload:payload_random] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x02#\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mic:mic_zeroed] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xb2\xf1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//////", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mic:mic_all_ones] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02g\xf2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//AP8A", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mic:mic_bit_flip] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x0el\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2a][DataUp_zeroed_mic][mic:mic_valid] EXPECTED:reject ACTUAL:reject VIOLATION:invalid_state_response
+
+[NAV] Navigating to S2/S2b
+
+[DB] Deleting device session...
+[DB] UPDATE 1
+[NONCE] DevNonce history flushed via SQL
+[SENT] b'\x02\xef\xf2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAAAAAAApVW3hfKcOHB3mjJS5MA=", "freq": 867.1'...
+[NAV ERROR] Failed to reach S2 — join not accepted
+
+[RUN] S2/S2b
+[SENT RAW] header + b'{"rxpk": }'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][GLOBAL_INVALID][malformed_json] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b''
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][GLOBAL_INVALID][empty_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'null'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][GLOBAL_INVALID][null_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][GLOBAL_INVALID][unknown_packet_type] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][GLOBAL_INVALID][truncated_header] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][GLOBAL_INVALID][invalid_version] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02\xd2p\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][GLOBAL_INVALID][wrong_devaddr] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": [{"data": "AAAAAAAAAAAAAAAAAAAA'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][GLOBAL_INVALID][oversized_semtech] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02!a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "QAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x40] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x0b\x03\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x80] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x00\xe8\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x00] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x96b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "IAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x20] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x87p\x00.d\x96\xd3I=f2{"rxpk": [{"data": "YAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x60] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xee<\x00.d\x96\xd3I=f2{"rxpk": [{"data": "oAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xa0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xffw\x00.d\x96\xd3I=f2{"rxpk": [{"data": "wAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xc0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x98\xd6\x00.d\x96\xd3I=f2{"rxpk": [{"data": "4AAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xe0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02RZ\x00.d\x96\xd3I=f2{"rxpk": [{"data": "/wAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xff] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xde\x0c\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][devaddr:devaddr_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02`I\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][devaddr:devaddr_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc7U\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP////8AAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][devaddr:devaddr_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xa6\x9f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gLfH9t8AAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][devaddr:devaddr_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\t\xdd\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][devaddr:devaddr_not_reversed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02<1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAEAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit0_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xa6\x0c\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAIAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit1_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xb1x\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAQAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit2_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x15\x12\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAgAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit3_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x96Q\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gBAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit4_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xdf\xbb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit5_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xee\xd3\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gEAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit6_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02U}\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit7_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x021\xa7\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fctrl:fctrl_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02Rx\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP8AAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fctrl:fctrl_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xbe1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fcnt:fcnt_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x17\x06\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fcnt:fcnt_current_minus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xb6\x9f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fcnt:fcnt_current] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc1\xdd\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAABAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fcnt:fcnt_current_plus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x99\xfc\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAD//wGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fcnt:fcnt_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x7f\x1e\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gACWqgGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fcnt:fcnt_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xcb\xb3\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAACqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fport:fport_0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xe7\xd6\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fport:fport_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xcd\xf4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAOCqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fport:fport_224] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02-\x1a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAP+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fport:fport_255] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xf3u\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAN+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][fport:fport_max_app] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02-\xd8\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][payload:payload_normal] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xb3\xa7\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAA", "freq": 867.1, "datr": "SF12BW125'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][payload:payload_empty] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02l\x91\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAAAA==", "freq": 867.1, "datr": "SF12B'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][payload:payload_one_byte] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02jZ\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGC+KF1DoAJwXxbwcOtzH5pVNhnlaFUi/Di5/m+SANF'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][payload:payload_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xd1\xec\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFXvCpEpC5yW3eiSbrsLXp6/zXznmfP/YqHVLoQEF1d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][payload:payload_over_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x9d\x1a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFKbadYmd4AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][payload:payload_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xbc\xeb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mic:mic_zeroed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02x\xb9\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//////", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mic:mic_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\'p\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//AP8A", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mic:mic_bit_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02H\xa9\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2b][DataUp_fcnt_frozen][mic:mic_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+
+[NAV] Navigating to S2/S2c
+
+[DB] Deleting device session...
+[DB] UPDATE 1
+[NONCE] DevNonce history flushed via SQL
+[SENT] b'\x02\x98U\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAAAAAAApVW3hfKcOHAAxkYEQSA=", "freq": 867.1'...
+[NAV ERROR] Failed to reach S2 — join not accepted
+
+[RUN] S2/S2c
+[SENT RAW] header + b'{"rxpk": }'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][GLOBAL_INVALID][malformed_json] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b''
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][GLOBAL_INVALID][empty_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'null'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][GLOBAL_INVALID][null_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][GLOBAL_INVALID][unknown_packet_type] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][GLOBAL_INVALID][truncated_header] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][GLOBAL_INVALID][invalid_version] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02\xa5\xac\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][GLOBAL_INVALID][wrong_devaddr] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": [{"data": "AAAAAAAAAAAAAAAAAAAA'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][GLOBAL_INVALID][oversized_semtech] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02\xf0\n\x00.d\x96\xd3I=f2{"rxpk": [{"data": "QAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x40] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\n\xc1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x80] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x99\xce\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x00] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xe2\xa4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "IAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x20] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x9d,\x00.d\x96\xd3I=f2{"rxpk": [{"data": "YAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x60] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xb6h\x00.d\x96\xd3I=f2{"rxpk": [{"data": "oAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xa0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc4\xf2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "wAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xc0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xaf\x0f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "4AAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xe0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x1c\x15\x00.d\x96\xd3I=f2{"rxpk": [{"data": "/wAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xff] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02+\x86\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][devaddr:devaddr_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xda\xe8\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][devaddr:devaddr_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x93\xc7\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP////8AAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][devaddr:devaddr_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc0\xed\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIDQDDwAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][devaddr:devaddr_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02`X\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][devaddr:devaddr_not_reversed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02CJ\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAEAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit0_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02We\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAIAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit1_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02rP\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAQAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit2_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\r\xa6\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAgAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit3_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x81\xe4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gBAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit4_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xcf\'\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit5_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x94!\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gEAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit6_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x99\xce\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit7_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x89J\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fctrl:fctrl_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x07\xfd\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP8AAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fctrl:fctrl_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xf7V\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fcnt:fcnt_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02e\xaa\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fcnt:fcnt_current_minus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x90\xd6\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fcnt:fcnt_current] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x0201\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAABAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fcnt:fcnt_current_plus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02I\xe5\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAD//wGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fcnt:fcnt_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02i\xb0\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gADd3AGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fcnt:fcnt_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x13\xe3\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAACqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fport:fport_0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x13z\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fport:fport_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x0b{\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAOCqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fport:fport_224] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x8c\x81\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAP+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fport:fport_255] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xb2\xa4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAN+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][fport:fport_max_app] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xe9\x06\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][payload:payload_normal] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02#n\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAA", "freq": 867.1, "datr": "SF12BW125'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][payload:payload_empty] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc7\xc3\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAAAA==", "freq": 867.1, "datr": "SF12B'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][payload:payload_one_byte] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02:\x91\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFzeX/DGz343j2i2LKHjHlGi/ZGutuhWE16qMvk/U2T'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][payload:payload_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02R\x9d\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFU0RnLtLSv+Wz1sItJCbHPExtrdybeny3VfJcxH3Ah'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][payload:payload_over_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc1\x8a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFI6WPeCJoAAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][payload:payload_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc2\xec\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mic:mic_zeroed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x85\xef\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//////", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mic:mic_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xa0\xe7\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//AP8A", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mic:mic_bit_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x020\xcc\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2c][DataUp_fcnt_frozen][mic:mic_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+
+[NAV] Navigating to S2/S2d
+
+[DB] Deleting device session...
+[DB] UPDATE 1
+[NONCE] DevNonce history flushed via SQL
+[SENT] b'\x02\x89n\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAAAAAAApVW3hfKcOHACZLRCNc0=", "freq": 867.1'...
+[NAV ERROR] Failed to reach S2 — join not accepted
+
+[RUN] S2/S2d
+[SENT RAW] header + b'{"rxpk": }'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][GLOBAL_INVALID][malformed_json] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b''
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][GLOBAL_INVALID][empty_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'null'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][GLOBAL_INVALID][null_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][GLOBAL_INVALID][unknown_packet_type] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][GLOBAL_INVALID][truncated_header] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][GLOBAL_INVALID][invalid_version] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02\x1ac\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][GLOBAL_INVALID][wrong_devaddr] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": [{"data": "AAAAAAAAAAAAAAAAAAAA'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][GLOBAL_INVALID][oversized_semtech] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02\\\xf0\x00.d\x96\xd3I=f2{"rxpk": [{"data": "QAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0x40] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02/\x84\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0x80] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xfe\xc5\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0x00] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xb9b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "IAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0x20] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02"\xc8\x00.d\x96\xd3I=f2{"rxpk": [{"data": "YAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0x60] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xd5\xd0\x00.d\x96\xd3I=f2{"rxpk": [{"data": "oAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0xa0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x1fs\x00.d\x96\xd3I=f2{"rxpk": [{"data": "wAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0xc0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02*\xeb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "4AAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0xe0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xf6\x8c\x00.d\x96\xd3I=f2{"rxpk": [{"data": "/wAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0xff] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xe6\x8c\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][devaddr:devaddr_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x08\xef\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][devaddr:devaddr_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02{\x04\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP////8AAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][devaddr:devaddr_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02Q\x9a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIuKMHEAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][devaddr:devaddr_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xb7\x98\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][devaddr:devaddr_not_reversed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xf4v\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAEAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fctrl:fctrl_bit0_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02tB\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAIAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fctrl:fctrl_bit1_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xd9\xb5\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAQAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fctrl:fctrl_bit2_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xa4\xdf\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAgAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fctrl:fctrl_bit3_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xa3\xcc\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gBAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fctrl:fctrl_bit4_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xa3\x88\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fctrl:fctrl_bit5_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xd9c\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gEAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fctrl:fctrl_bit6_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xeew\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fctrl:fctrl_bit7_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x8cj\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fctrl:fctrl_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x025\x84\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP8AAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fctrl:fctrl_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02,\xa4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fcnt:fcnt_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02*9\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fcnt:fcnt_current_minus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xfad\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fcnt:fcnt_current] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02^\xde\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAABAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fcnt:fcnt_current_plus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xdd\xfa\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAD//wGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fcnt:fcnt_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02Q\x1d\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gACM3wGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fcnt:fcnt_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xb05\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAACqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fport:fport_0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xfd>\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fport:fport_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02d\x06\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAOCqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fport:fport_224] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xf6\x0b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAP+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fport:fport_255] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x11b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAN+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][fport:fport_max_app] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02g\x04\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][payload:payload_normal] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x1e9\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAA", "freq": 867.1, "datr": "SF12BW125'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][payload:payload_empty] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x028\n\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAAAA==", "freq": 867.1, "datr": "SF12B'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][payload:payload_one_byte] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x11\xf8\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAF9IY5pyrzrcRm0nyY20oWWIjpHitGUtwcMkcLDmws1'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][payload:payload_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x98@\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAHWdkqiGDHlEJU8UN/gwtI9ox6ZOVcRbH70solq+7xN'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][payload:payload_over_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xe9\xad\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFr3idcLQYAAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][payload:payload_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x14j\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mic:mic_zeroed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02T\xeb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//////", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mic:mic_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xfd\x9d\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//AP8A", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mic:mic_bit_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc4f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_max][mic:mic_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x026\xd8\x00.d\x96\xd3I=f2{"rxpk": [{"data": "QAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0x40] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x82\xac\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0x80] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xf0\x1a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0x00] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xc0\xa0\x00.d\x96\xd3I=f2{"rxpk": [{"data": "IAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0x20] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02+\x0f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "YAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0x60] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02`\xf7\x00.d\x96\xd3I=f2{"rxpk": [{"data": "oAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0xa0] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02w\x06\x00.d\x96\xd3I=f2{"rxpk": [{"data": "wAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0xc0] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02os\x00.d\x96\xd3I=f2{"rxpk": [{"data": "4AAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0xe0] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x7f\x92\x00.d\x96\xd3I=f2{"rxpk": [{"data": "/wAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0xff] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x9dw\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][devaddr:devaddr_valid] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x0b.\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][devaddr:devaddr_zero] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x02\x80\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP////8AAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][devaddr:devaddr_all_ones] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02LQ\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gGcZiJcAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][devaddr:devaddr_random] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x05\xd2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][devaddr:devaddr_not_reversed] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02W\x94\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAEAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit0_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xf0x\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAIAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit1_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x874\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAQAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit2_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xbe*\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAgAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit3_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x15\xd6\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gBAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit4_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02M\xa5\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit5_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xb4I\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gEAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit6_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x06\x90\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit7_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xad~\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fctrl:fctrl_zero] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x84\x1a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP8AAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fctrl:fctrl_all_ones] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x9d\xdc\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fcnt:fcnt_zero] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xe9k\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fcnt:fcnt_current_minus_1] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x1e\xea\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fcnt:fcnt_current] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xaf9\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAABAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fcnt:fcnt_current_plus_1] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02{\xd7\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAD//wGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fcnt:fcnt_max] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x01\xf5\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAfbwGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fcnt:fcnt_random] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x80\x9a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAACqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fport:fport_0] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xdau\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fport:fport_1] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xb1e\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAOCqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fport:fport_224] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x1b\x8d\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAP+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fport:fport_255] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x87#\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAN+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][fport:fport_max_app] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02F\x1f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][payload:payload_normal] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xb5\x9e\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAA", "freq": 867.1, "datr": "SF12BW125'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][payload:payload_empty] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02a\xc4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAAAA==", "freq": 867.1, "datr": "SF12B'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][payload:payload_one_byte] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02H\x9b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFCwRMy/jYmDQ7kp4kUUGSwQZIcUITfqDRnDH10X3mN'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][payload:payload_max] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xae\xd1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGzhACIKE0zasRmQtbZqzzlg2DdD2pgFkRQrRFAbmL8'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][payload:payload_over_max] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x05\xaf\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGdVm/L2LwAAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][payload:payload_random] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x7f\xe4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mic:mic_zeroed] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xb0\t\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//////", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mic:mic_all_ones] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02w=\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//AP8A", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mic:mic_bit_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02cN\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2d][DataUp_fcnt_overflow][mic:mic_valid] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+
+[NAV] Navigating to S2/S2e
+
+[DB] Deleting device session...
+[DB] UPDATE 1
+[NONCE] DevNonce history flushed via SQL
+[SENT] b'\x02\x88\xa9\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAAAAAAApVW3hfKcOHAqg6+YiM8=", "freq": 867.1'...
+[NAV ERROR] Failed to reach S2 — join not accepted
+
+[RUN] S2/S2e
+[SENT RAW] header + b'{"rxpk": }'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][GLOBAL_INVALID][malformed_json] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b''
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][GLOBAL_INVALID][empty_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'null'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][GLOBAL_INVALID][null_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][GLOBAL_INVALID][unknown_packet_type] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][GLOBAL_INVALID][truncated_header] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][GLOBAL_INVALID][invalid_version] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02N\x90\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][GLOBAL_INVALID][wrong_devaddr] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": [{"data": "AAAAAAAAAAAAAAAAAAAA'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][GLOBAL_INVALID][oversized_semtech] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02\xf9b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "QAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mhdr:mhdr_mtype_0x40] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x13\xda\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mhdr:mhdr_mtype_0x80] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x15U\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mhdr:mhdr_mtype_0x00] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02H\x14\x00.d\x96\xd3I=f2{"rxpk": [{"data": "IAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mhdr:mhdr_mtype_0x20] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02 \xc8\x00.d\x96\xd3I=f2{"rxpk": [{"data": "YAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mhdr:mhdr_mtype_0x60] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x06\xc1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "oAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mhdr:mhdr_mtype_0xa0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc60\x00.d\x96\xd3I=f2{"rxpk": [{"data": "wAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mhdr:mhdr_mtype_0xc0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xa2\x8b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "4AAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mhdr:mhdr_mtype_0xe0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xba\x19\x00.d\x96\xd3I=f2{"rxpk": [{"data": "/wAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mhdr:mhdr_mtype_0xff] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xd2\x1b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][devaddr:devaddr_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02)\x8a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][devaddr:devaddr_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x07!\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP////8AAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][devaddr:devaddr_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc8\x88\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gH4KM4MAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][devaddr:devaddr_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02z\xa2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][devaddr:devaddr_not_reversed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02x:\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAEAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fctrl:fctrl_bit0_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xd3@\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAIAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fctrl:fctrl_bit1_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02w\x00\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAQAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fctrl:fctrl_bit2_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02UM\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAgAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fctrl:fctrl_bit3_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xcf \x00.d\x96\xd3I=f2{"rxpk": [{"data": "gBAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fctrl:fctrl_bit4_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xbe\xd7\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fctrl:fctrl_bit5_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02r\xbb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gEAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fctrl:fctrl_bit6_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02LY\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fctrl:fctrl_bit7_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x03@\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fctrl:fctrl_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02V\x8a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP8AAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fctrl:fctrl_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xfb\x8f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fcnt:fcnt_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xa4\x84\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fcnt:fcnt_current_minus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xcaF\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fcnt:fcnt_current] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x028\xdc\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAABAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fcnt:fcnt_current_plus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x1f\xbb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAD//wGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fcnt:fcnt_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02Q\xf4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gADz8QGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fcnt:fcnt_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x8b`\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAACqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fport:fport_0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xa2\xf0\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fport:fport_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x85\x12\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAOCqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fport:fport_224] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02^g\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAP+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fport:fport_255] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xab\x9c\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAN+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][fport:fport_max_app] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc0S\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][payload:payload_normal] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02=\r\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAA", "freq": 867.1, "datr": "SF12BW125'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][payload:payload_empty] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x02\x8a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAAAA==", "freq": 867.1, "datr": "SF12B'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][payload:payload_one_byte] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc8\x05\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEEuAvGeUslJyMQlQjdkHKfJ1yJDwL1Kw2rWkEyQKvq'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][payload:payload_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x12\xce\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAH+7zXMDJdfgJy4p+7CbWT9gMS/0DKprsKXt8sGn2oV'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][payload:payload_over_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xe9\xfd\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAED70G14V8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][payload:payload_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x1c\x89\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mic:mic_zeroed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xaf\xf7\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//////", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mic:mic_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02B\xc5\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//AP8A", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mic:mic_bit_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xe4\x10\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2e][DataUp_oversized][mic:mic_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+
+[NAV] Navigating to S2/S2f
+
+[DB] Deleting device session...
+[DB] UPDATE 1
+[NONCE] DevNonce history flushed via SQL
+[SENT] b'\x02\x1e=\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAAAAAAApVW3hfKcOHCkqarFd/A=", "freq": 867.1'...
+[NAV ERROR] Failed to reach S2 — join not accepted
+
+[RUN] S2/S2f
+[SENT RAW] header + b'{"rxpk": }'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][GLOBAL_INVALID][malformed_json] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b''
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][GLOBAL_INVALID][empty_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'null'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][GLOBAL_INVALID][null_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][GLOBAL_INVALID][unknown_packet_type] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][GLOBAL_INVALID][truncated_header] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][GLOBAL_INVALID][invalid_version] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02[\xe0\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][GLOBAL_INVALID][wrong_devaddr] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": [{"data": "AAAAAAAAAAAAAAAAAAAA'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][GLOBAL_INVALID][oversized_semtech] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x02\xda\xa1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "QAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0x40] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xcf\xe1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0x80] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02;\x7f\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0x00] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02EE\x00.d\x96\xd3I=f2{"rxpk": [{"data": "IAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0x20] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xd1X\x00.d\x96\xd3I=f2{"rxpk": [{"data": "YAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0x60] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02xr\x00.d\x96\xd3I=f2{"rxpk": [{"data": "oAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0xa0] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x86\x88\x00.d\x96\xd3I=f2{"rxpk": [{"data": "wAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0xc0] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xe6\x88\x00.d\x96\xd3I=f2{"rxpk": [{"data": "4AAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0xe0] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xdd#\x00.d\x96\xd3I=f2{"rxpk": [{"data": "/wAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0xff] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02w\xa5\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][devaddr:devaddr_valid] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02 \xc4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][devaddr:devaddr_zero] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02#\xdb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP////8AAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][devaddr:devaddr_all_ones] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xc6h\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCKnDVgAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][devaddr:devaddr_random] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02BF\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][devaddr:devaddr_not_reversed] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x1d9\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAEAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit0_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02F\x12\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAIAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit1_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x84\xfc\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAQAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit2_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xa0r\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAgAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit3_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02>b\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gBAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit4_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02PK\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit5_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xf3o\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gEAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit6_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xcd4\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit7_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02qf\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_zero] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02D<\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP8AAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_all_ones] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x9c\xc9\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_zero] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02N6\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_current_minus_1] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x1cQ\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_current] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x00\xb2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAABAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_current_plus_1] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xa7u\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAD//wGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_max] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02C\xb0\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gACmVAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_random] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xff\x01\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAACqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fport:fport_0] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x0e\xcb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fport:fport_1] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02|{\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAOCqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fport:fport_224] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xc1\xc6\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAP+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fport:fport_255] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02/\xd7\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAN+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][fport:fport_max_app] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xb3\x9c\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][payload:payload_normal] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x11\xa5\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAA", "freq": 867.1, "datr": "SF12BW125'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][payload:payload_empty] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x86Y\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAAAA==", "freq": 867.1, "datr": "SF12B'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][payload:payload_one_byte] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\x841\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAHLa7up3EETj7uupjyWJ/nztk9UAnWLkmxckC/cesGJ'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][payload:payload_max] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x029\xfd\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAF9DctowZXF78Ttqcj0IB+wWhh27cm4XAvO3OxsNreJ'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][payload:payload_over_max] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02K:\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFkKlRSUSQAAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][payload:payload_random] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02-!\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mic:mic_zeroed] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xa2\xb2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//////", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mic:mic_all_ones] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02K\xc3\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//AP8A", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mic:mic_bit_flip] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02\xc8\x94\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport_0][mic:mic_valid] EXPECTED:unknown ACTUAL:reject VIOLATION:invalid_state_response
+[SENT] b'\x02i\x07\x00.d\x96\xd3I=f2{"rxpk": [{"data": "QAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0x40] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x022\x88\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0x80] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x16\xcb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0x00] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x03\x1c\x00.d\x96\xd3I=f2{"rxpk": [{"data": "IAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0x20] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02n;\x00.d\x96\xd3I=f2{"rxpk": [{"data": "YAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0x60] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xdd\xdc\x00.d\x96\xd3I=f2{"rxpk": [{"data": "oAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0xa0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02t\xe2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "wAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0xc0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x025\xbb\x00.d\x96\xd3I=f2{"rxpk": [{"data": "4AAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0xe0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x86\x00\x00.d\x96\xd3I=f2{"rxpk": [{"data": "/wAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0xff] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xf8\x8a\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][devaddr:devaddr_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xbd\x03\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][devaddr:devaddr_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xd9"\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP////8AAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][devaddr:devaddr_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02s-\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gH0D3joAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][devaddr:devaddr_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02z\xb0\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][devaddr:devaddr_not_reversed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02F\xdf\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAEAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit0_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02=;\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAIAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit1_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x01`\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAQAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit2_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xf8-\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAgAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit3_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xe9\xb7\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gBAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit4_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02$\x1c\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gCAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit5_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02X{\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gEAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit6_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xd8\xb0\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gIAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit7_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02Zl\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fctrl:fctrl_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xe5K\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gP8AAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fctrl:fctrl_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02^\xd1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fcnt:fcnt_zero] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02S\xb5\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fcnt:fcnt_current_minus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xb9P\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fcnt:fcnt_current] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xde-\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAABAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fcnt:fcnt_current_plus_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\x9c\xcc\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAD//wGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fcnt:fcnt_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02u\xf2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gACZoAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fcnt:fcnt_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xdc(\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAACqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fport:fport_0] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xbf\xea\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fport:fport_1] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xec\x97\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAOCqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fport:fport_224] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02%1\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAP+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fport:fport_255] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02j\xf2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAN+qu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][fport:fport_max_app] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc4\xb2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][payload:payload_normal] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xf45\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAA", "freq": 867.1, "datr": "SF12BW125'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][payload:payload_empty] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02*\xfc\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAEAAAAAAA==", "freq": 867.1, "datr": "SF12B'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][payload:payload_one_byte] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x021\xe2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAE3FVnXIlGjWwHZEWIYaviaOuQ6SoL8rCMLbBKcZKo5'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][payload:payload_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02\xc3S\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAFwAmb8RYgat8fqJWSAmXKy9eFws/bnknGZ1wK3WINF'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][payload:payload_over_max] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02}\x00\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAHrstD/5S8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][payload:payload_random] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02} \x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mic:mic_zeroed] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02!\x9d\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//////", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mic:mic_all_ones] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x02Bu\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v//AP8A", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mic:mic_bit_flip] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+[SENT] b'\x027]\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAGqu8zd7v8AAAAA", "freq": 867.1, "datr": "S'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S2f][DataUp_empty_payload_fport1][mic:mic_valid] EXPECTED:accept ACTUAL:reject VIOLATION:unexpected_rejection
+
+[NAV] Navigating to S3/S3a
+
+[DB] Deleting device session...
+[DB] UPDATE 1
+[NONCE] DevNonce history flushed via SQL
+[SENT] b'\x02\xd5\xf2\x00.d\x96\xd3I=f2{"rxpk": [{"data": "AAAAAAAAAAAApVW3hfKcOHATZWYNKLM=", "freq": 867.1'...
+[NAV ERROR] Failed to reach S3 — join not accepted
+
+[RUN] S3/S3a
+[SENT RAW] header + b'{"rxpk": }'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S3a][GLOBAL_INVALID][malformed_json] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b''
+[REDIS] No new entry in gw:stream:frame after 3s
+[S3a][GLOBAL_INVALID][empty_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'null'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S3a][GLOBAL_INVALID][null_body] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S3a][GLOBAL_INVALID][unknown_packet_type] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S3a][GLOBAL_INVALID][truncated_header] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": []}'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S3a][GLOBAL_INVALID][invalid_version] EXPECTED:reject ACTUAL:reject MATCH
+[SENT] b'\x028t\x00.d\x96\xd3I=f2{"rxpk": [{"data": "gAAAAAAAAAABqrvM3e7/AAAAAA==", "freq": 867.1, "d'...
+[REDIS] No new entry in gw:stream:frame after 3s
+[S3a][GLOBAL_INVALID][wrong_devaddr] EXPECTED:reject ACTUAL:reject MATCH
+[SENT RAW] header + b'{"rxpk": [{"data": "AAAAAAAAAAAAAAAAAAAA'
+[REDIS] No new entry in gw:stream:frame after 3s
+[S3a][GLOBAL_INVALID][oversized_semtech] EXPECTED:reject ACTUAL:reject MATCH
+Traceback (most recent call last):
+  File "C:\Users\daawe\Systematic-LoRaWAN-Fuzzing-ChirpStack\statefuzzingalgo.py", line 1193, in <module>
+    run_substate(state_name, substate_name, substate, context)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\daawe\Systematic-LoRaWAN-Fuzzing-ChirpStack\statefuzzingalgo.py", line 1056, in run_substate
+    run_transition(transition_name, transition, context, substate_name)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\daawe\Systematic-LoRaWAN-Fuzzing-ChirpStack\statefuzzingalgo.py", line 1005, in run_transition
+    fields = get_field_definitions(transition["trigger"], context)
+  File "C:\Users\daawe\Systematic-LoRaWAN-Fuzzing-ChirpStack\statefuzzingalgo.py", line 567, in get_field_definitions
+    raise ValueError(f"Unknown message type: {message_type}")
+ValueError: Unknown message type: ReJoinRequest
+
+Violations before crash: 450
+  [S2a][DataUp_valid][mhdr:mhdr_mtype_0x40] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mhdr:mhdr_mtype_0x80] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mhdr:mhdr_mtype_0x00] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mhdr:mhdr_mtype_0x20] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mhdr:mhdr_mtype_0x60] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mhdr:mhdr_mtype_0xa0] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mhdr:mhdr_mtype_0xc0] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mhdr:mhdr_mtype_0xe0] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mhdr:mhdr_mtype_0xff] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][devaddr:devaddr_valid] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][devaddr:devaddr_zero] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][devaddr:devaddr_all_ones] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][devaddr:devaddr_random] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][devaddr:devaddr_not_reversed] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fctrl:fctrl_bit0_flip] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fctrl:fctrl_bit1_flip] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fctrl:fctrl_bit2_flip] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fctrl:fctrl_bit3_flip] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fctrl:fctrl_bit4_flip] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fctrl:fctrl_bit5_flip] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fctrl:fctrl_bit6_flip] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fctrl:fctrl_bit7_flip] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fctrl:fctrl_zero] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fctrl:fctrl_all_ones] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fcnt:fcnt_zero] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fcnt:fcnt_current_minus_1] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fcnt:fcnt_current] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fcnt:fcnt_current_plus_1] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fcnt:fcnt_max] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fcnt:fcnt_random] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fport:fport_0] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fport:fport_1] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fport:fport_224] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fport:fport_255] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][fport:fport_max_app] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][payload:payload_normal] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][payload:payload_empty] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][payload:payload_one_byte] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][payload:payload_max] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][payload:payload_over_max] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][payload:payload_random] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mic:mic_zeroed] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mic:mic_all_ones] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mic:mic_bit_flip] UNEXPECTED_REJECTION
+  [S2a][DataUp_valid][mic:mic_valid] UNEXPECTED_REJECTION
+  [S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0x40] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0x80] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0x00] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0x20] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0x60] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0xa0] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0xc0] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0xe0] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mhdr:mhdr_mtype_0xff] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][devaddr:devaddr_valid] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][devaddr:devaddr_zero] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][devaddr:devaddr_all_ones] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][devaddr:devaddr_random] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][devaddr:devaddr_not_reversed] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fctrl:fctrl_bit0_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fctrl:fctrl_bit1_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fctrl:fctrl_bit2_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fctrl:fctrl_bit3_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fctrl:fctrl_bit4_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fctrl:fctrl_bit5_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fctrl:fctrl_bit6_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fctrl:fctrl_bit7_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fctrl:fctrl_zero] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fctrl:fctrl_all_ones] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fcnt:fcnt_zero] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fcnt:fcnt_current_minus_1] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fcnt:fcnt_current] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fcnt:fcnt_current_plus_1] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fcnt:fcnt_max] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fcnt:fcnt_random] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fport:fport_0] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fport:fport_1] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fport:fport_224] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fport:fport_255] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][fport:fport_max_app] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][payload:payload_normal] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][payload:payload_empty] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][payload:payload_one_byte] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][payload:payload_max] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][payload:payload_over_max] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][payload:payload_random] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mic:mic_zeroed] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mic:mic_all_ones] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mic:mic_bit_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_invalid_mic][mic:mic_valid] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0x40] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0x80] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0x00] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0x20] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0x60] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0xa0] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0xc0] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0xe0] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mhdr:mhdr_mtype_0xff] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][devaddr:devaddr_valid] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][devaddr:devaddr_zero] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][devaddr:devaddr_all_ones] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][devaddr:devaddr_random] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][devaddr:devaddr_not_reversed] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fctrl:fctrl_bit0_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fctrl:fctrl_bit1_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fctrl:fctrl_bit2_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fctrl:fctrl_bit3_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fctrl:fctrl_bit4_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fctrl:fctrl_bit5_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fctrl:fctrl_bit6_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fctrl:fctrl_bit7_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fctrl:fctrl_zero] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fctrl:fctrl_all_ones] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fcnt:fcnt_zero] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fcnt:fcnt_current_minus_1] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fcnt:fcnt_current] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fcnt:fcnt_current_plus_1] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fcnt:fcnt_max] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fcnt:fcnt_random] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fport:fport_0] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fport:fport_1] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fport:fport_224] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fport:fport_255] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][fport:fport_max_app] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][payload:payload_normal] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][payload:payload_empty] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][payload:payload_one_byte] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][payload:payload_max] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][payload:payload_over_max] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][payload:payload_random] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mic:mic_zeroed] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mic:mic_all_ones] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mic:mic_bit_flip] INVALID_STATE_RESPONSE
+  [S2a][DataUp_zeroed_mic][mic:mic_valid] INVALID_STATE_RESPONSE
+  [S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x40] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x80] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x00] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x20] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x60] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xa0] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xc0] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xe0] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xff] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][devaddr:devaddr_valid] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][devaddr:devaddr_zero] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][devaddr:devaddr_all_ones] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][devaddr:devaddr_random] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][devaddr:devaddr_not_reversed] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit0_flip] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit1_flip] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit2_flip] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit3_flip] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit4_flip] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit5_flip] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit6_flip] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fctrl:fctrl_bit7_flip] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fctrl:fctrl_zero] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fctrl:fctrl_all_ones] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fcnt:fcnt_zero] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fcnt:fcnt_current_minus_1] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fcnt:fcnt_current] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fcnt:fcnt_current_plus_1] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fcnt:fcnt_max] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fcnt:fcnt_random] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fport:fport_0] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fport:fport_1] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fport:fport_224] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fport:fport_255] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][fport:fport_max_app] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][payload:payload_normal] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][payload:payload_empty] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][payload:payload_one_byte] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][payload:payload_max] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][payload:payload_over_max] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][payload:payload_random] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mic:mic_zeroed] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mic:mic_all_ones] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mic:mic_bit_flip] UNEXPECTED_REJECTION
+  [S2b][DataUp_fcnt_frozen][mic:mic_valid] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x40] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x80] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x00] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x20] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0x60] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xa0] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xc0] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xe0] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mhdr:mhdr_mtype_0xff] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][devaddr:devaddr_valid] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][devaddr:devaddr_zero] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][devaddr:devaddr_all_ones] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][devaddr:devaddr_random] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][devaddr:devaddr_not_reversed] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit0_flip] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit1_flip] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit2_flip] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit3_flip] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit4_flip] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit5_flip] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit6_flip] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fctrl:fctrl_bit7_flip] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fctrl:fctrl_zero] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fctrl:fctrl_all_ones] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fcnt:fcnt_zero] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fcnt:fcnt_current_minus_1] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fcnt:fcnt_current] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fcnt:fcnt_current_plus_1] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fcnt:fcnt_max] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fcnt:fcnt_random] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fport:fport_0] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fport:fport_1] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fport:fport_224] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fport:fport_255] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][fport:fport_max_app] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][payload:payload_normal] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][payload:payload_empty] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][payload:payload_one_byte] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][payload:payload_max] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][payload:payload_over_max] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][payload:payload_random] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mic:mic_zeroed] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mic:mic_all_ones] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mic:mic_bit_flip] UNEXPECTED_REJECTION
+  [S2c][DataUp_fcnt_frozen][mic:mic_valid] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0x40] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0x80] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0x00] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0x20] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0x60] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0xa0] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0xc0] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0xe0] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mhdr:mhdr_mtype_0xff] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][devaddr:devaddr_valid] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][devaddr:devaddr_zero] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][devaddr:devaddr_all_ones] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][devaddr:devaddr_random] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][devaddr:devaddr_not_reversed] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fctrl:fctrl_bit0_flip] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fctrl:fctrl_bit1_flip] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fctrl:fctrl_bit2_flip] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fctrl:fctrl_bit3_flip] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fctrl:fctrl_bit4_flip] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fctrl:fctrl_bit5_flip] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fctrl:fctrl_bit6_flip] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fctrl:fctrl_bit7_flip] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fctrl:fctrl_zero] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fctrl:fctrl_all_ones] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fcnt:fcnt_zero] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fcnt:fcnt_current_minus_1] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fcnt:fcnt_current] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fcnt:fcnt_current_plus_1] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fcnt:fcnt_max] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fcnt:fcnt_random] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fport:fport_0] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fport:fport_1] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fport:fport_224] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fport:fport_255] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][fport:fport_max_app] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][payload:payload_normal] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][payload:payload_empty] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][payload:payload_one_byte] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][payload:payload_max] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][payload:payload_over_max] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][payload:payload_random] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mic:mic_zeroed] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mic:mic_all_ones] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mic:mic_bit_flip] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_max][mic:mic_valid] UNEXPECTED_REJECTION
+  [S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0x40] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0x80] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0x00] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0x20] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0x60] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0xa0] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0xc0] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0xe0] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mhdr:mhdr_mtype_0xff] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][devaddr:devaddr_valid] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][devaddr:devaddr_zero] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][devaddr:devaddr_all_ones] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][devaddr:devaddr_random] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][devaddr:devaddr_not_reversed] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit0_flip] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit1_flip] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit2_flip] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit3_flip] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit4_flip] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit5_flip] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit6_flip] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fctrl:fctrl_bit7_flip] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fctrl:fctrl_zero] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fctrl:fctrl_all_ones] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fcnt:fcnt_zero] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fcnt:fcnt_current_minus_1] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fcnt:fcnt_current] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fcnt:fcnt_current_plus_1] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fcnt:fcnt_max] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fcnt:fcnt_random] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fport:fport_0] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fport:fport_1] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fport:fport_224] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fport:fport_255] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][fport:fport_max_app] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][payload:payload_normal] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][payload:payload_empty] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][payload:payload_one_byte] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][payload:payload_max] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][payload:payload_over_max] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][payload:payload_random] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mic:mic_zeroed] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mic:mic_all_ones] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mic:mic_bit_flip] INVALID_STATE_RESPONSE
+  [S2d][DataUp_fcnt_overflow][mic:mic_valid] INVALID_STATE_RESPONSE
+  [S2e][DataUp_oversized][mhdr:mhdr_mtype_0x40] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mhdr:mhdr_mtype_0x80] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mhdr:mhdr_mtype_0x00] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mhdr:mhdr_mtype_0x20] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mhdr:mhdr_mtype_0x60] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mhdr:mhdr_mtype_0xa0] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mhdr:mhdr_mtype_0xc0] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mhdr:mhdr_mtype_0xe0] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mhdr:mhdr_mtype_0xff] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][devaddr:devaddr_valid] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][devaddr:devaddr_zero] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][devaddr:devaddr_all_ones] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][devaddr:devaddr_random] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][devaddr:devaddr_not_reversed] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fctrl:fctrl_bit0_flip] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fctrl:fctrl_bit1_flip] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fctrl:fctrl_bit2_flip] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fctrl:fctrl_bit3_flip] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fctrl:fctrl_bit4_flip] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fctrl:fctrl_bit5_flip] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fctrl:fctrl_bit6_flip] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fctrl:fctrl_bit7_flip] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fctrl:fctrl_zero] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fctrl:fctrl_all_ones] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fcnt:fcnt_zero] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fcnt:fcnt_current_minus_1] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fcnt:fcnt_current] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fcnt:fcnt_current_plus_1] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fcnt:fcnt_max] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fcnt:fcnt_random] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fport:fport_0] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fport:fport_1] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fport:fport_224] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fport:fport_255] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][fport:fport_max_app] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][payload:payload_normal] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][payload:payload_empty] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][payload:payload_one_byte] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][payload:payload_max] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][payload:payload_over_max] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][payload:payload_random] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mic:mic_zeroed] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mic:mic_all_ones] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mic:mic_bit_flip] UNEXPECTED_REJECTION
+  [S2e][DataUp_oversized][mic:mic_valid] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0x40] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0x80] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0x00] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0x20] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0x60] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0xa0] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0xc0] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0xe0] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mhdr:mhdr_mtype_0xff] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][devaddr:devaddr_valid] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][devaddr:devaddr_zero] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][devaddr:devaddr_all_ones] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][devaddr:devaddr_random] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][devaddr:devaddr_not_reversed] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit0_flip] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit1_flip] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit2_flip] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit3_flip] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit4_flip] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit5_flip] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit6_flip] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_bit7_flip] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_zero] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fctrl:fctrl_all_ones] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_zero] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_current_minus_1] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_current] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_current_plus_1] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_max] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fcnt:fcnt_random] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fport:fport_0] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fport:fport_1] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fport:fport_224] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fport:fport_255] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][fport:fport_max_app] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][payload:payload_normal] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][payload:payload_empty] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][payload:payload_one_byte] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][payload:payload_max] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][payload:payload_over_max] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][payload:payload_random] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mic:mic_zeroed] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mic:mic_all_ones] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mic:mic_bit_flip] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport_0][mic:mic_valid] INVALID_STATE_RESPONSE
+  [S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0x40] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0x80] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0x00] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0x20] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0x60] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0xa0] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0xc0] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0xe0] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mhdr:mhdr_mtype_0xff] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][devaddr:devaddr_valid] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][devaddr:devaddr_zero] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][devaddr:devaddr_all_ones] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][devaddr:devaddr_random] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][devaddr:devaddr_not_reversed] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit0_flip] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit1_flip] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit2_flip] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit3_flip] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit4_flip] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit5_flip] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit6_flip] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fctrl:fctrl_bit7_flip] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fctrl:fctrl_zero] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fctrl:fctrl_all_ones] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fcnt:fcnt_zero] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fcnt:fcnt_current_minus_1] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fcnt:fcnt_current] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fcnt:fcnt_current_plus_1] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fcnt:fcnt_max] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fcnt:fcnt_random] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fport:fport_0] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fport:fport_1] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fport:fport_224] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fport:fport_255] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][fport:fport_max_app] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][payload:payload_normal] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][payload:payload_empty] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][payload:payload_one_byte] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][payload:payload_max] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][payload:payload_over_max] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][payload:payload_random] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mic:mic_zeroed] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mic:mic_all_ones] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mic:mic_bit_flip] UNEXPECTED_REJECTION
+  [S2f][DataUp_empty_payload_fport1][mic:mic_valid] UNEXPECTED_REJECTION
+
+Press Enter to exit...

@@ -333,11 +333,11 @@ FSM = {
                     "description": "Zeroed Mic Rejoin",
                     "field_config": "zeroed_mic_rejoin",
                     "sequence_origin": ["normal_join", "rejoin", "duplicate_join"],
-                    "valid_messages": ["ReJoinRequest"],
+                    "valid_messages": ["RejoinRequest"],
                     "invalid_messages": ["DataUp", "JoinRequest"],
                     "transitions": {
                         "ReJoin_Zero_MIC": {
-                            "trigger": "ReJoinRequest",
+                            "trigger": "RejoinRequest",
                             "mic_state": "invalid",
                             "payload_state": "normal",
                             "expected_cs_response": "reject",
@@ -367,11 +367,11 @@ FSM = {
                     "description": "Duplicate Rejoin Request",
                     "field_config": "duplicate_rejoin_request",
                     "sequence_origin": ["normal_join", "rejoin", "duplicate_join"],
-                    "valid_messages": ["ReJoinRequest"],
+                    "valid_messages": ["RejoinRequest"],
                     "invalid_messages": ["DataUp", "JoinRequest"],
                     "transitions": {
                         "Duplicate_Rejoin": {
-                            "trigger": "ReJoinRequest",
+                            "trigger": "RejoinRequest",
                             "mic_state": "zeroed",
                             "payload_state": "normal",
                             "expected_cs_response": "reject",
@@ -1128,7 +1128,8 @@ def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
 
     elif state == "S2":
         delete_device_session()
-        flush_device_nonces()
+        # flush_device_nonces()
+        time.sleep(1)
         nonce = send_valid_join(context)
         used_nonces.append(nonce)  # update global
         context["last_join_nonce"] = nonce
@@ -1143,7 +1144,8 @@ def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
     elif state == "S3":
         # navigate to s2, all s3 needs to be in s2 first
         delete_device_session()
-        flush_device_nonces()
+        # flush_device_nonces()
+        time.sleep(1)
         nonce = send_valid_join(context)
         used_nonces.append(nonce)  # update global
         context["last_join_nonce"] = nonce
@@ -1168,15 +1170,16 @@ def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
 
 def flush_device_nonces():
     """
-    Flushes DevNonce history directly via PostgreSQL.
-    Fallback if REST API endpoint is unavailable.
+    Clears the dev_nonces jsonb array without deleting the device_keys row.
+    Preserves AppKey so future joins remain possible.
     """
     stdout, stderr = run_docker_cmd([
         "docker", "exec", POSTGRES_CONTAINER,
         "psql", "-U", "chirpstack", "-c",
-        f"DELETE FROM device_keys WHERE dev_eui = '\\x{DEV_EUI.hex()}';"
+        f"UPDATE device_keys SET dev_nonces = '{{}}', join_nonce = 0 "
+        f"WHERE dev_eui = '\\x{DEV_EUI.hex()}';"
     ])
-    if "DELETE" in stdout:
+    if "UPDATE" in stdout:
         print("[NONCE] DevNonce history flushed via SQL")
     else:
         print(f"[NONCE ERROR] {stderr}")
