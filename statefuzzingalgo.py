@@ -1,10 +1,12 @@
 import json
+import socket
 import base64
 import os
+import Cipher
+import algorithms
+import modes
 from datetime import datetime, timezone
 import time
-import urllib.request
-import urllib.error
 import re
 
 
@@ -12,7 +14,9 @@ import re
 from FuzzTest1SemTechUDP import (
     send_packet,
     send_raw,
-    valid_header
+    valid_header,
+    TARGET,
+    sock
 )
 
 from statefulFuzzer import (
@@ -21,7 +25,6 @@ from statefulFuzzer import (
     poll_redis_for_new_entry,
     compute_join_request_mic,
     delete_device_session,
-    get_device_state,
     POSTGRES_CONTAINER,
     DEV_EUI,
     JOIN_EUI,
@@ -40,12 +43,19 @@ API_KEY = (
     "joiY2hpcnBzdGFjayIsInN1YiI6IjBlZDhmZGJhLWM5NjktNGJiNi05YzlhLTIxM2U5NjczOTZlMiIsInR5cCI6ImtleSJ9.atuc08Li9FuAMvuil80H8mWCI_99HesBXg0FnfGGEH0"
 )
 
+# Substates/configs defined in the FSM as such: 
+# Substate categorizes system behavior by network history and how the network server reacts to a message, invalid or valid.
+# Config categorizes system behavior by the quality / type of the message being sent to trigger said behavior. A substate is defined by either a dependency on server memory, 
+# or an independent code path reached on every run. 
+# Substate/Config paths marked with a ** are configurations as such below:
+
+
 FSM = {
     "states": {
         "S0": {
             "description": "No active session exists",
-            "substates": {
-                "S0a": {
+            "substates/configs": {
+                "S0a**": {
                     "description": "Fresh - never joined, no DevNonce history",
                     "field_config": "no_session",
                     "sequence_origin": ["none"],
@@ -78,7 +88,7 @@ FSM = {
                         },
                     },
                 },
-                "S0b": {
+                "S0b**": {
                     "description": "Clear - previously joined, session deleted",
                     "field_config": "no_session_history",
                     "sequence_origin": ["deleted"],
@@ -139,8 +149,8 @@ FSM = {
         },
         "S1": {
             "description": "JoinRequest accepted by ChirpStack, JoinAccept sent, awaiting first uplink",
-            "substates": {
-                "S1a": {
+            "substates/configs": {
+                "S1a**": {
                     "description": "Pending join - valid JoinRequest was accepted",
                     "field_config": "join_pending",
                     "sequence_origin": ["normal_join"],
@@ -188,7 +198,7 @@ FSM = {
         },
         "S2": {
             "description": "Active joined session",
-            "substates": {
+            "substates/configs": {
                 "S2a": {
                     "description": "Valid MIC, fresh fcnt",
                     "field_config": "valid_mic_fresh_fcnt",
@@ -281,7 +291,7 @@ FSM = {
                         },
                     },
                 },
-                "S2e": {
+                "S2e**": {
                     "description": "Valid MIC, oversized payload",
                     "field_config": "valid_mic_oversized_payload",
                     "sequence_origin": ["normal_join", "rejoin", "duplicate_join"],
@@ -299,7 +309,7 @@ FSM = {
                         }
                     },
                 },
-                "S2f": {
+                "S2f**": { 
                     "description": "Valid MIC, empty payload",
                     "field_config": "valid_mic_empty_payload",
                     "sequence_origin": ["normal_join", "rejoin", "duplicate_join"],
@@ -328,7 +338,7 @@ FSM = {
         },
         "S3": {
             "description": "Rejoin Pending",
-            "substates": {
+            "substates/configs": {
                 "S3a": {
                     "description": "Zeroed Mic Rejoin",
                     "field_config": "zeroed_mic_rejoin",
@@ -1046,12 +1056,16 @@ def run_transition(
     return 0
 
 
+
 def run_substate(state_name: str, substate_name: str, substate: dict, context: dict):
     """
-    Runs all transitions and global invalids for a single substate.
+    Runs all transitions and global invalids for a single substate. Must reset python window between runs.
     """
+    global_invalids_used = set()
     print(f"\n[RUN] {state_name}/{substate_name}")
-    run_global_invalids(substate_name, context)
+    if(state_name not in global_invalids_used):
+        run_global_invalids(substate_name, context)
+        global_invalids_used.add(state_name)
     for transition_name, transition in substate["transitions"].items():
         run_transition(transition_name, transition, context, substate_name)
 
@@ -1064,7 +1078,7 @@ def run_fsm():
     """
     context_dict = get_current_context()
     for state_name, state in FSM["states"].items():
-        for substate_name, substate in state["substates"].items():
+        for substate_name, substate in state["substates/configs"].items():
             context_dict = navigate_to_substate(state_name, substate_name, context_dict)
             run_substate(state_name, substate_name, substate, context_dict)
 
@@ -1191,7 +1205,7 @@ if __name__ == "__main__":
     try:
         context = get_current_context()
         for state_name in ["S2", "S3"]:
-            for substate_name, substate in FSM["states"][state_name]["substates"].items():
+            for substate_name, substate in FSM["states"][state_name]["substates/configs"].items():
                 context = navigate_to_substate(state_name, substate_name, context)
                 run_substate(state_name, substate_name, substate, context)
         print(f"\nTotal violations: {len(violations)}")
@@ -1212,15 +1226,71 @@ if __name__ == "__main__":
     # powershell Get-Content fuzzing_results.txt -Wait
 
 
-    # try:
-    #     run_fsm()
-    # except Exception as e:
-    #     import traceback
-    #     print(f"\n[CRASH] {e}")
-    #     traceback.print_exc()
-    #     print(f"\nViolations found before crash: {len(violations)}")
-    #     for v in violations:
-    #         print(f"  [{v['state']}][{v['transition']}][{v['field']}:{v['mutation']}] "
-    #               f"{v['category'].upper()}")
+def send_pull_data():
+    """
+    Sends a PULL_DATA packet (type 0x02) so Gateway Bridge knows
+    where to route downlinks for this gateway EUI.
+    Structure: version(1) | token(2) | 0x02 | gateway_eui(8)
+    No JSON body — PULL_DATA has no payload.
+    """
+    token = os.urandom(2)
+    frame = bytes([0x02] + token + bytes([0x02]) + bytes.fromhex(GW_EUI))
 
-    # input("\n Press Enter to exit...")
+    try:
+        sock.sendto(frame, TARGET)
+        time.sleep(0.1)
+    except Exception as e:
+        print(f"[ERROR] {e}")
+
+def capture_downlink(timeout=3) -> bytes | None:
+    """
+    Listens on `sock` for a PULL_RESP packet (type 0x03).
+    Returns the raw txpk.data bytes (still base64-decoded to raw
+    frame bytes) if received, None on timeout.
+    Remember: sock currently has no timeout set — you'll need
+    sock.settimeout(timeout) before recvfrom, and to catch the
+    resulting socket.timeout exception.
+    """
+    sock.settimeout(timeout)
+    try:
+        data = sock.recvfrom(4096)
+        if data[3] != 0x03:
+            return None
+        body = json.loads(data[4:])
+        txpk_data = body["txpk"]["data"]
+        return base64.b64decode(txpk_data)
+    except socket.timeout:
+        return None
+    except Exception as e:
+        print(f"[ERROR] {e}")
+        return None
+
+def decrypt_join_accept(app_key: bytes, encrypted: bytes) -> dict:
+
+    # raw_frame = capture_downlink()
+    # join_accept_body = raw_frame[1:]  # drop MHDR (byte 0, should be 0x20)
+    # parsed = decrypt_join_accept(APP_KEY, join_accept_body)
+    """
+    encrypted = frame bytes minus the leading MHDR byte.
+    Returns dict with app_nonce, net_id, dev_addr, dl_settings,
+    rx_delay, and (if present) cflist — parsed from the decrypted
+    plaintext by fixed byte offsets.
+    """
+    cipher = Cipher(algorithms.AES(app_key), modes.ECB())
+    encryptor = cipher.encryptor()
+    plaintext = encryptor.update(encrypted) + encryptor.finalize()
+
+    return {
+        "app_nonce": plaintext[0:2],
+        "net_id": plaintext[3:5],
+        "dev_addr": plaintext[6:9],
+        "dl_settings": plaintext[10],
+        "rx_delay": plaintext[11],
+        "cf_list": plaintext[12:28] if len(plaintext) == 28 else None,
+    }
+
+def derive_session_keys(app_key: bytes, app_nonce: bytes,
+                         net_id: bytes, dev_nonce: bytes) -> tuple[bytes, bytes]:
+    """
+    Returns (nwk_skey, app_skey).
+    """
