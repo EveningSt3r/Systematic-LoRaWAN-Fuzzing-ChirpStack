@@ -1294,3 +1294,16 @@ def derive_session_keys(app_key: bytes, app_nonce: bytes,
     """
     Returns (nwk_skey, app_skey).
     """
+
+    nwk_input = bytes([0x01] + app_nonce + net_id + dev_nonce + bytes(7))
+    app_input = bytes([0x02]) + app_nonce + net_id + dev_nonce + bytes(7)
+
+    cipher_nwk = Cipher(algorithms.AES(app_key), modes.ECB())
+    enc_nwk = cipher_nwk.encryptor()
+    nwk_skey = enc_nwk.update(nwk_input) + enc_nwk.finalize()
+
+    cipher_app = Cipher(algorithms.AES(app_key), modes.ECB())
+    enc_app = cipher_app.encryptor()
+    app_skey = enc_app.update(app_input) + enc_app.finalize()
+
+    return nwk_skey, app_skey
