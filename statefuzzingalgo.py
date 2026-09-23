@@ -2,13 +2,14 @@ import json
 import socket
 import base64
 import os
-import Cipher
-import algorithms
-import modes
 from datetime import datetime, timezone
 import time
 import re
 
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from cryptography.hazmat.primitives.cmac import CMAC
+from cryptography.hazmat.primitives.ciphers.algorithms import AES
+from cryptography.hazmat.backends import default_backend
 
 
 from FuzzTest1SemTechUDP import (
@@ -29,6 +30,7 @@ from statefulFuzzer import (
     DEV_EUI,
     JOIN_EUI,
     GW_EUI,
+    APP_KEY
 )
 
 
@@ -37,6 +39,7 @@ LOG_TS_RE = re.compile(r"^(\S+)")
 
 used_nonces = []
 violations = []
+global_invalids_used = set()
 
 API_KEY = (
     "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzI"
@@ -1061,7 +1064,6 @@ def run_substate(state_name: str, substate_name: str, substate: dict, context: d
     """
     Runs all transitions and global invalids for a single substate. Must reset python window between runs.
     """
-    global_invalids_used = set()
     print(f"\n[RUN] {state_name}/{substate_name}")
     if(state_name not in global_invalids_used):
         run_global_invalids(substate_name, context)
@@ -1200,31 +1202,6 @@ def flush_device_nonces():
 
 
 
-if __name__ == "__main__":
-
-    try:
-        context = get_current_context()
-        for state_name in ["S2", "S3"]:
-            for substate_name, substate in FSM["states"][state_name]["substates/configs"].items():
-                context = navigate_to_substate(state_name, substate_name, context)
-                run_substate(state_name, substate_name, substate, context)
-        print(f"\nTotal violations: {len(violations)}")
-        for v in violations:
-            print(f"  [{v['state']}][{v['transition']}][{v['field']}:{v['mutation']}] "
-                  f"{v['category'].upper()}")
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        print(f"\nViolations before crash: {len(violations)}")
-        for v in violations:
-            print(f"  [{v['state']}][{v['transition']}][{v['field']}:{v['mutation']}] "
-                  f"{v['category'].upper()}")
-        input("\nPress Enter to exit...")
-
-    # powercfg /change standby-timeout-ac 0
-    # python -u statefuzzingalgo.py > fuzzing_results.txt 2>&1
-    # powershell Get-Content fuzzing_results.txt -Wait
-
 
 def send_pull_data():
     """
@@ -1234,7 +1211,7 @@ def send_pull_data():
     No JSON body — PULL_DATA has no payload.
     """
     token = os.urandom(2)
-    frame = bytes([0x02] + token + bytes([0x02]) + bytes.fromhex(GW_EUI))
+    frame = bytes([0x02]) + token + bytes([0x02]) + bytes.fromhex(GW_EUI)
 
     try:
         sock.sendto(frame, TARGET)
@@ -1253,7 +1230,7 @@ def capture_downlink(timeout=3) -> bytes | None:
     """
     sock.settimeout(timeout)
     try:
-        data = sock.recvfrom(4096)
+        data, addr = sock.recvfrom(4096)
         if data[3] != 0x03:
             return None
         body = json.loads(data[4:])
@@ -1281,11 +1258,11 @@ def decrypt_join_accept(app_key: bytes, encrypted: bytes) -> dict:
     plaintext = encryptor.update(encrypted) + encryptor.finalize()
 
     return {
-        "app_nonce": plaintext[0:2],
-        "net_id": plaintext[3:5],
-        "dev_addr": plaintext[6:9],
-        "dl_settings": plaintext[10],
-        "rx_delay": plaintext[11],
+        "app_nonce": plaintext[0:3],
+        "net_id": plaintext[3:6],
+        "dev_addr": plaintext[6:10],
+        "dl_settings": plaintext[10:11],
+        "rx_delay": plaintext[11:12],
         "cf_list": plaintext[12:28] if len(plaintext) == 28 else None,
     }
 
@@ -1295,7 +1272,7 @@ def derive_session_keys(app_key: bytes, app_nonce: bytes,
     Returns (nwk_skey, app_skey).
     """
 
-    nwk_input = bytes([0x01] + app_nonce + net_id + dev_nonce + bytes(7))
+    nwk_input = bytes([0x01]) + app_nonce + net_id + dev_nonce + bytes(7)
     app_input = bytes([0x02]) + app_nonce + net_id + dev_nonce + bytes(7)
 
     cipher_nwk = Cipher(algorithms.AES(app_key), modes.ECB())
@@ -1307,3 +1284,57 @@ def derive_session_keys(app_key: bytes, app_nonce: bytes,
     app_skey = enc_app.update(app_input) + enc_app.finalize()
 
     return nwk_skey, app_skey
+
+def compute_data_up_mic(nwk_skey: bytes, devaddr: bytes, fcnt: int, msg: bytes) -> bytes:
+    b0 = (bytes([0x49]) + bytes(4) + bytes([0x00])
+          + devaddr + fcnt.to_bytes(4, "little")
+          + bytes([0x00]) + bytes([len(msg)]))
+    cipher = CMAC(algorithms.AES(nwk_skey), backend=default_backend())
+    cipher.update(b0 + msg)     
+    full_cmac = cipher.finalize()
+
+    return full_cmac[0:4]
+
+if __name__ == "__main__":
+    delete_device_session()
+    send_pull_data()
+    context = get_current_context()
+    dev_nonce = send_valid_join(context)
+    raw = capture_downlink()
+    if raw is None:
+        print("[TEST] No JoinAccept captured — check PULL_DATA / timing")
+    else:
+        parsed = decrypt_join_accept(APP_KEY, raw[1:])  # strip MHDR
+        print(f"[TEST] AppNonce={parsed['app_nonce'].hex()} "
+              f"NetID={parsed['net_id'].hex()} "
+              f"DevAddr={parsed['dev_addr'].hex()}")
+
+        nwk_skey, app_skey = derive_session_keys(
+            APP_KEY, parsed["app_nonce"], parsed["net_id"], dev_nonce
+        )
+        print(f"[TEST] NwkSKey={nwk_skey.hex()}")
+
+    # try:
+    #     context = get_current_context()
+    #     for state_name in ["S2", "S3"]:
+    #         for substate_name, substate in FSM["states"][state_name]["substates/configs"].items():
+    #             context = navigate_to_substate(state_name, substate_name, context)
+    #             run_substate(state_name, substate_name, substate, context)
+    #     print(f"\nTotal violations: {len(violations)}")
+    #     for v in violations:
+    #         print(f"  [{v['state']}][{v['transition']}][{v['field']}:{v['mutation']}] "
+    #               f"{v['category'].upper()}")
+    # except Exception as e:
+    #     import traceback
+    #     traceback.print_exc()
+    #     print(f"\nViolations before crash: {len(violations)}")
+    #     for v in violations:
+    #         print(f"  [{v['state']}][{v['transition']}][{v['field']}:{v['mutation']}] "
+    #               f"{v['category'].upper()}")
+    #     input("\nPress Enter to exit...")
+
+    # powercfg /change standby-timeout-ac 0
+    # python -u statefuzzingalgo.py > fuzzing_results.txt 2>&1
+    # powershell Get-Content fuzzing_results.txt -Wait
+
+
