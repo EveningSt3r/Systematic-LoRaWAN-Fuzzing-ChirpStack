@@ -723,6 +723,13 @@ def build_frame(message_type: str, field_overrides: dict, context: dict) -> byte
         dev_nonce = field_values["dev_nonce"]
         mic_value = compute_join_request_mic(mhdr, JOIN_EUI, DEV_EUI, dev_nonce)
         frame += mic_value
+    elif mic_value is None and message_type == "DataUp":
+        nwk_skey = context.get("nwk_skey")
+        devaddr = field_values["data_addr"]
+        fcnt = int.from_bytes(field_values["fcnt"], "little")
+        msg = frame
+        mic_value = compute_data_up_mic(nwk_skey, devaddr, fcnt, msg)
+        frame += mic_value
     else:
         if mic_value is None:
             mic_value = bytes(4)
@@ -1144,9 +1151,10 @@ def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
 
     elif state == "S2":
         delete_device_session()
-        # flush_device_nonces()
+        send_pull_data()
         time.sleep(1)
         nonce = send_valid_join(context)
+        raw = capture_downlink()
         used_nonces.append(nonce)  # update global
         context["last_join_nonce"] = nonce
         time.sleep(2)
@@ -1154,13 +1162,22 @@ def navigate_to_substate(state: str, substate: str, context: dict) -> dict:
         if not context["session_exists"]:
                         print("[NAV ERROR] Failed to reach S2 — join not accepted")
                         return context
+
+        parsed = decrypt_join_accept(APP_KEY, raw[1:])  # strip MHDR
+        print(f"[TEST] AppNonce={parsed['app_nonce'].hex()} "
+        f"NetID={parsed['net_id'].hex()} "
+        f"DevAddr={parsed['dev_addr'].hex()}")
+        
+        nwk_skey, app_skey = derive_session_keys(
+            APP_KEY, parsed["app_nonce"], parsed["net_id"], nonce
+        )
+        context["nwk_skey"] = nwk_skey
         # all S2 substates arrive the same way
-        # delete, joinreq, sleep 2
+        # delete, joinreq, sleep 1
 
     elif state == "S3":
         # navigate to s2, all s3 needs to be in s2 first
         delete_device_session()
-        # flush_device_nonces()
         time.sleep(1)
         nonce = send_valid_join(context)
         used_nonces.append(nonce)  # update global
@@ -1220,27 +1237,27 @@ def send_pull_data():
         print(f"[ERROR] {e}")
 
 def capture_downlink(timeout=3) -> bytes | None:
-    """
-    Listens on `sock` for a PULL_RESP packet (type 0x03).
-    Returns the raw txpk.data bytes (still base64-decoded to raw
-    frame bytes) if received, None on timeout.
-    Remember: sock currently has no timeout set — you'll need
-    sock.settimeout(timeout) before recvfrom, and to catch the
-    resulting socket.timeout exception.
-    """
-    sock.settimeout(timeout)
-    try:
-        data, addr = sock.recvfrom(4096)
-        if data[3] != 0x03:
+    deadline = time.time() + timeout
+    while True:
+        remaining = deadline - time.time()
+        if remaining <= 0:
             return None
-        body = json.loads(data[4:])
-        txpk_data = body["txpk"]["data"]
-        return base64.b64decode(txpk_data)
-    except socket.timeout:
-        return None
-    except Exception as e:
-        print(f"[ERROR] {e}")
-        return None
+        sock.settimeout(remaining)
+        try:
+            data, addr = sock.recvfrom(4096)
+        except socket.timeout:
+            return None
+        except Exception as e:
+            print(f"[ERROR] {e}")
+            return None
+
+        if len(data) < 4:
+            continue  # too short to inspect, keep listening
+        if data[3] == 0x03:
+            body = json.loads(data[4:])
+            txpk_data = body["txpk"]["data"]
+            return base64.b64decode(txpk_data)
+        # else: PULL_ACK / PUSH_ACK / anything else — discard, keep listening
 
 def decrypt_join_accept(app_key: bytes, encrypted: bytes) -> dict:
 
