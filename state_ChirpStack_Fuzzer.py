@@ -1225,7 +1225,7 @@ def send_pull_data():
     Sends a PULL_DATA packet (type 0x02) so Gateway Bridge knows
     where to route downlinks for this gateway EUI.
     Structure: version(1) | token(2) | 0x02 | gateway_eui(8)
-    No JSON body — PULL_DATA has no payload.
+    No JSON body, PULL_DATA has no payload.
     """
     token = os.urandom(2)
     frame = bytes([0x02]) + token + bytes([0x02]) + bytes.fromhex(GW_EUI)
@@ -1260,11 +1260,11 @@ def capture_downlink(timeout=3) -> bytes | None:
         # else: PULL_ACK / PUSH_ACK / anything else — discard, keep listening
 
 def decrypt_join_accept(app_key: bytes, encrypted: bytes) -> dict:
-
-    # raw_frame = capture_downlink()
-    # join_accept_body = raw_frame[1:]  # drop MHDR (byte 0, should be 0x20)
-    # parsed = decrypt_join_accept(APP_KEY, join_accept_body)
     """
+    raw_frame = capture_downlink()
+    join_accept_body = raw_frame[1:]  # drop MHDR (byte 0, should be 0x20)
+    parsed = decrypt_join_accept(APP_KEY, join_accept_body)
+    
     encrypted = frame bytes minus the leading MHDR byte.
     Returns dict with app_nonce, net_id, dev_addr, dl_settings,
     rx_delay, and (if present) cflist — parsed from the decrypted
